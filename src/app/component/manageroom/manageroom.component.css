@@ -1,0 +1,211 @@
+.card__status {
+    color: white;
+}
+
+.dadat .card__status {
+    background-color: #b8b4b4;
+}
+.trong .icon1{
+    display: none;
+}
+.trong .status1{
+    display: none;
+}
+.dadat .status2{
+    display: none;
+}
+.dadat .icon2{
+    display: none;
+}
+
+.trong .card__status {
+    background-color: #65b267;
+}
+
+
+
+
+.cards__item {
+    display: flex;
+}
+
+.card {
+    
+   
+    border-radius: 0.5rem;
+    /* box-shadow: 0 20px 40px -14px rgba(0, 0, 0, 0.25); */
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;
+    width: 100%;
+}
+
+.card__content {
+    padding: 0 0.5rem;
+    background-color: #dad6d6;
+    color: black;
+}
+
+
+
+
+
+
+
+.sb{
+    background: #dad6d6;
+}
+
+.title{
+    font-size: 20px;
+    color: rgb(36, 157, 157);
+    font-weight: 500;
+    
+}
+
+
+.icon-size {
+    font-size: 50px;
+    height: 50px;
+    width: 50px;
+  }
+
+
+.modal-footer button:nth-child(1),
+.modal-footer button:nth-child(2),
+.btn-themdv{
+    background-color: #65b267;
+    border: #65b267;
+    color: white;
+}
+
+.cangiua{
+    display: flex;
+    align-items: center;
+}
+
+.dichvu{
+    height: 300px;
+    background: white;
+    overflow-y: scroll;
+}
+
+
+.box{
+    background-color: white;
+    height: 300px;
+    padding: 10px;
+}
+
+.input-info{
+    margin-left: 5px;
+    border: none;
+    border-bottom: 1px solid;
+    outline: none;
+
+
+}
+
+form .fa-solid{
+    width: 17px;
+}
+
+.input-phong{
+    border: none;
+    border-bottom: 1px solid;
+    outline: none;
+}
+
+.fa-calendar-days, .fa-clock{
+    margin-right: 10px;
+    font-size: 17px;
+}
+
+.info-phong{
+    margin: 10px;
+}
+.info-phong label{
+    font-size: 10px;
+}
+
+.thead, tbody, tfoot, tr, td, th {
+    border-width: unset;
+    text-align: center;
+}
+
+.title-modal{
+    font-size: 2rem;
+    color: deepskyblue;
+    font-weight: 500;
+    margin-left: 50%;
+}
+
+.title-body{
+    font-size: 1.8rem;
+    color: deepskyblue;
+    font-weight: 500;
+    text-align: center;
+}
+
+.form-user{
+    padding: 20px 160px;
+}
+
+.title-table{
+    color: deepskyblue;
+}
+
+.modal-body{
+    background-color: #ededed;
+}
+
+input, select{
+    background-color: #ededed;
+}
+
+.header-bill{
+    display: flex;
+    justify-content: space-between;
+    margin: 15px;
+    align-items: center;
+}
+
+.title-bill{
+    font-size: 2rem;
+    color: yellowgreen;
+    font-weight: 600;
+}
+
+.total{
+    text-align: right;
+    border-top: 1px solid;
+    border-bottom: 1px solid;
+    padding: 10px 0;
+}
+
+.total-value{
+    font-size: 1.5rem;
+    font-weight: 600;
+    color: #333;
+}
+
+.name-customer{
+    color: #333;
+    font-size: 1.5rem;
+    margin-bottom: 10px;
+    font-weight: 500;
+}
+
+.footer-bill{
+    display: flex;
+    justify-content: space-between;
+    margin-top: 8px;
+}
+
+.container-fluid.sb{
+    margin-top: 50px;
+}
+
+button:disabled{
+    opacity: 1;
+}

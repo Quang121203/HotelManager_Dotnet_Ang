@@ -1,0 +1,24 @@
+<nav class="navbar align-items-start sidebar sidebar-dark accordion p-0 navbar-dark" style="background-color: #649e81;">
+    <div class="container-fluid d-flex flex-column p-0"><a
+            class="navbar-brand d-flex justify-content-center align-items-center sidebar-brand m-0" routerLink="./main">
+            <div class="sidebar-brand-icon rotate-n-15"><i src=""></i></div>
+            <div class="sidebar-brand-text mx-3"><span>QUANG<br>Hotel Manager</span></div>
+        </a>
+        <hr class="sidebar-divider my-0">
+        <ul class="navbar-nav text-light" id="accordionSidebar">
+            <li class="nav-item"><a class="nav-link" routerLink="./hotelmanage" [routerLinkActive]="['active']"><i
+                        class="fas fa-table"></i><span>Hotel Manage</span></a></li>
+            <li class="nav-item"><a class="nav-link" routerLink="./materialmanage" [routerLinkActive]="['active']"><i
+                        class="fas fa-table"></i><span>Material Manage</span></a>
+            </li>
+            <li class="nav-item"><a class="nav-link" routerLink="./profile" [routerLinkActive]="['active']"><i
+                        class="fas fa-user"></i><span>Profile</span></a></li>
+            <li class="nav-item"><a class="nav-link" routerLink="./table" [routerLinkActive]="['active']"><i
+                        class="fas fa-table"></i><span>Table</span></a></li>
+            <li class="nav-item"><a class="nav-link" routerLink="./home" [routerLinkActive]="['active']"><i
+                        class="fas fa-tachometer-alt"></i><span>Report</span></a></li>
+            <li class="nav-item"><a class="nav-link" routerLink="./login" [routerLinkActive]="['active']"><i
+                        class="far fa-user-circle"></i><span>Log Out</span></a></li>
+        </ul>
+    </div>
+</nav>

@@ -1,0 +1,85 @@
+<div class="container-fluid">
+    <h3 class="text-dark mb-4">Profile</h3>
+    <div class="row mb-3">
+        <div class="col-lg-4">
+            <div class="card mb-3">
+                <div class="card-body text-center shadow"><img class="rounded-circle mb-3 mt-4"
+                        src="assets/img/dogs/image2.jpeg" width="160" height="160">
+                    <p class="h4 fw-bold">user</p>
+                    <p class="h4">fullName</p>
+                    <p class="h4">role</p>
+                </div>
+            </div>
+
+        </div>
+        <div class="col-lg-8">
+            <div class="row">
+                <div class="col">
+                    <div class="card shadow mb-3">
+                        <div class="card-header py-3">
+                            <p class="text-primary m-0 fw-bold">User Settings</p>
+                        </div>
+                        <div class="card-body">
+                            <form>
+                                <div class="row">
+                                    <div class="col">
+                                        <div class="mb-3"><label class="form-label"
+                                                for="username"><strong>Username</strong></label><input
+                                                class="form-control" type="text" id="username" disabled></div>
+                                    </div>
+                                    <div class="col">
+                                        <div class="mb-3"><label class="form-label" for="email"><strong>Email
+                                                    Address</strong></label><input class="form-control" type="email"
+                                                id="email" formControlName="email"></div>
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div class="col">
+                                        <div class="mb-3"><label class="form-label" for="full_name"><strong>Full
+                                                    Name</strong></label><input class="form-control" type="text"
+                                                id="full_name" formControlName="fullName"></div>
+                                    </div>
+                                    <div class="col">
+                                        <div class="mb-3"><label class="form-label" for="role_user"><strong>Role
+                                                    User</strong></label><input class="form-control" type="text"
+                                                id="role_user" disabled></div>
+                                    </div>
+                                </div>
+                                <div class="mb-3"><button class="btn btn-success btn-sm " type="submit">Save
+                                        Settings</button></div>
+                            </form>
+                        </div>
+                    </div>
+                    <div class="card shadow mb-3">
+                        <div class="card-header py-3">
+                            <p class="text-primary m-0 fw-bold">Change Password</p>
+                        </div>
+                        <div class="card-body">
+                            <form>
+                                <div class="row">
+                                    <div class="col">
+                                        <div class="mb-3"><label class="form-label" for="oldpass"><strong>Old
+                                                    Password</strong></label><input class="form-control" type="password"
+                                                id="oldpass"></div>
+                                    </div>
+                                    <div class="col">
+                                        <div class="mb-3"><label class="form-label" for="newpass"><strong>New
+                                                    Password</strong></label><input class="form-control" type="password"
+                                                id="newpass"></div>
+                                    </div>
+                                    <div class="col">
+                                        <div class="mb-3"><label class="form-label" for="confpass"><strong>Confirm
+                                                    Password</strong></label><input class="form-control" type="password"
+                                                id="confpass"></div>
+                                    </div>
+                                </div>
+                                <div class="mb-3"><button class="btn btn-success btn-sm" type="submit">Save
+                                        Settings</button></div>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

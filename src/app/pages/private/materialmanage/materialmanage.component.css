@@ -1,0 +1,40 @@
+.header-room{
+    display: flex;
+    justify-content: space-between;
+    padding: 10px 20px;
+}
+
+.wrap-search{
+    border: 2px solid;
+    padding: 3px;
+    border-radius: 6px;
+}
+.header-search{
+    outline: none;
+    border: none;
+    padding-left: 10px;
+    background-color: #f8f9fc;
+}
+
+.header-find{
+    border-radius: 6px;
+    border: none;
+    background-color: #649e81;
+    color: #fff;
+}
+
+.header-find:hover{
+    filter: brightness(0.93);
+}
+
+.table{
+    border-style: solid;
+}
+
+table i{
+    cursor: pointer;
+}
+
+.table-room{
+    padding: 40px 100px;
+}
