@@ -1,0 +1,190 @@
+{
+  "Version": 1,
+  "WorkspaceRootPath": "C:\\Users\\napoleQuang\\Downloads\\BackEnd\\",
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\napoleQuang\\Downloads\\BackEnd\\BackEnd\\Migrations\\20240330104212_InitialCreate.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:BackEnd\\Migrations\\20240330104212_InitialCreate.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{15F36059-D64D-4792-B014-A70BBC261E59}|BackEnd\\BackEnd.csproj|c:\\users\\napolequang\\downloads\\backend\\backend\\appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}",
+      "RelativeMoniker": "D:0:0:{15F36059-D64D-4792-B014-A70BBC261E59}|BackEnd\\BackEnd.csproj|solutionrelative:backend\\appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\napoleQuang\\Downloads\\BackEnd\\BackEnd\\Migrations\\20240330104049_InitialCreate.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:BackEnd\\Migrations\\20240330104049_InitialCreate.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{15F36059-D64D-4792-B014-A70BBC261E59}|BackEnd\\BackEnd.csproj|c:\\users\\napolequang\\downloads\\backend\\backend\\dataaccess\\unitofwork.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{15F36059-D64D-4792-B014-A70BBC261E59}|BackEnd\\BackEnd.csproj|solutionrelative:backend\\dataaccess\\unitofwork.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{15F36059-D64D-4792-B014-A70BBC261E59}|BackEnd\\BackEnd.csproj|c:\\users\\napolequang\\downloads\\backend\\backend\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{15F36059-D64D-4792-B014-A70BBC261E59}|BackEnd\\BackEnd.csproj|solutionrelative:backend\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{15F36059-D64D-4792-B014-A70BBC261E59}|BackEnd\\BackEnd.csproj|c:\\users\\napolequang\\downloads\\backend\\backend\\dataaccess\\iunitofwork.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{15F36059-D64D-4792-B014-A70BBC261E59}|BackEnd\\BackEnd.csproj|solutionrelative:backend\\dataaccess\\iunitofwork.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{15F36059-D64D-4792-B014-A70BBC261E59}|BackEnd\\BackEnd.csproj|c:\\users\\napolequang\\downloads\\backend\\backend\\dataaccess\\irepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{15F36059-D64D-4792-B014-A70BBC261E59}|BackEnd\\BackEnd.csproj|solutionrelative:backend\\dataaccess\\irepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{15F36059-D64D-4792-B014-A70BBC261E59}|BackEnd\\BackEnd.csproj|c:\\users\\napolequang\\downloads\\backend\\backend\\dataaccess\\repository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{15F36059-D64D-4792-B014-A70BBC261E59}|BackEnd\\BackEnd.csproj|solutionrelative:backend\\dataaccess\\repository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{15F36059-D64D-4792-B014-A70BBC261E59}|BackEnd\\BackEnd.csproj|c:\\users\\napolequang\\downloads\\backend\\backend\\models\\dal\\dbcontext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{15F36059-D64D-4792-B014-A70BBC261E59}|BackEnd\\BackEnd.csproj|solutionrelative:backend\\models\\dal\\dbcontext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{15F36059-D64D-4792-B014-A70BBC261E59}|BackEnd\\BackEnd.csproj|c:\\users\\napolequang\\downloads\\backend\\backend\\models\\domains\\bill.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{15F36059-D64D-4792-B014-A70BBC261E59}|BackEnd\\BackEnd.csproj|solutionrelative:backend\\models\\domains\\bill.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    }
+  ],
+  "DocumentGroupContainers": [
+    {
+      "Orientation": 0,
+      "VerticalTabListWidth": 256,
+      "DocumentGroups": [
+        {
+          "DockedWidth": 200,
+          "SelectedChildIndex": 0,
+          "Children": [
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "20240330104212_InitialCreate.cs",
+              "DocumentMoniker": "C:\\Users\\napoleQuang\\Downloads\\BackEnd\\BackEnd\\Migrations\\20240330104212_InitialCreate.cs",
+              "RelativeDocumentMoniker": "BackEnd\\Migrations\\20240330104212_InitialCreate.cs",
+              "ToolTip": "C:\\Users\\napoleQuang\\Downloads\\BackEnd\\BackEnd\\Migrations\\20240330104212_InitialCreate.cs",
+              "RelativeToolTip": "BackEnd\\Migrations\\20240330104212_InitialCreate.cs",
+              "ViewState": "AQIAAAgAAAAAAAAAAAAxwAAAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-03-30T10:42:12.269Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "appsettings.json",
+              "DocumentMoniker": "C:\\Users\\napoleQuang\\Downloads\\BackEnd\\BackEnd\\appsettings.json",
+              "RelativeDocumentMoniker": "BackEnd\\appsettings.json",
+              "ToolTip": "C:\\Users\\napoleQuang\\Downloads\\BackEnd\\BackEnd\\appsettings.json",
+              "RelativeToolTip": "BackEnd\\appsettings.json",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAsAAAABAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001642|",
+              "WhenOpened": "2024-03-30T10:42:01.023Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "20240330104049_InitialCreate.cs",
+              "DocumentMoniker": "C:\\Users\\napoleQuang\\Downloads\\BackEnd\\BackEnd\\Migrations\\20240330104049_InitialCreate.cs",
+              "RelativeDocumentMoniker": "BackEnd\\Migrations\\20240330104049_InitialCreate.cs",
+              "ToolTip": "C:\\Users\\napoleQuang\\Downloads\\BackEnd\\BackEnd\\Migrations\\20240330104049_InitialCreate.cs",
+              "RelativeToolTip": "BackEnd\\Migrations\\20240330104049_InitialCreate.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-03-30T10:40:50.029Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "Program.cs",
+              "DocumentMoniker": "C:\\Users\\napoleQuang\\Downloads\\BackEnd\\BackEnd\\Program.cs",
+              "RelativeDocumentMoniker": "BackEnd\\Program.cs",
+              "ToolTip": "C:\\Users\\napoleQuang\\Downloads\\BackEnd\\BackEnd\\Program.cs",
+              "RelativeToolTip": "BackEnd\\Program.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAA4AAAA2AAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-03-30T10:38:22.6Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 7,
+              "Title": "Repository.cs",
+              "DocumentMoniker": "C:\\Users\\napoleQuang\\Downloads\\BackEnd\\BackEnd\\DataAccess\\Repository.cs",
+              "RelativeDocumentMoniker": "BackEnd\\DataAccess\\Repository.cs",
+              "ToolTip": "C:\\Users\\napoleQuang\\Downloads\\BackEnd\\BackEnd\\DataAccess\\Repository.cs",
+              "RelativeToolTip": "BackEnd\\DataAccess\\Repository.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAoAAAAvAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-03-30T10:36:06.673Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "UnitOfWork.cs",
+              "DocumentMoniker": "C:\\Users\\napoleQuang\\Downloads\\BackEnd\\BackEnd\\DataAccess\\UnitOfWork.cs",
+              "RelativeDocumentMoniker": "BackEnd\\DataAccess\\UnitOfWork.cs",
+              "ToolTip": "C:\\Users\\napoleQuang\\Downloads\\BackEnd\\BackEnd\\DataAccess\\UnitOfWork.cs",
+              "RelativeToolTip": "BackEnd\\DataAccess\\UnitOfWork.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAcAAAAFAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-03-30T10:36:15.223Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 5,
+              "Title": "IUnitOfWork.cs",
+              "DocumentMoniker": "C:\\Users\\napoleQuang\\Downloads\\BackEnd\\BackEnd\\DataAccess\\IUnitOfWork.cs",
+              "RelativeDocumentMoniker": "BackEnd\\DataAccess\\IUnitOfWork.cs",
+              "ToolTip": "C:\\Users\\napoleQuang\\Downloads\\BackEnd\\BackEnd\\DataAccess\\IUnitOfWork.cs",
+              "RelativeToolTip": "BackEnd\\DataAccess\\IUnitOfWork.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAIAAAAZAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-03-30T10:36:01.224Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 6,
+              "Title": "IRepository.cs",
+              "DocumentMoniker": "C:\\Users\\napoleQuang\\Downloads\\BackEnd\\BackEnd\\DataAccess\\IRepository.cs",
+              "RelativeDocumentMoniker": "BackEnd\\DataAccess\\IRepository.cs",
+              "ToolTip": "C:\\Users\\napoleQuang\\Downloads\\BackEnd\\BackEnd\\DataAccess\\IRepository.cs",
+              "RelativeToolTip": "BackEnd\\DataAccess\\IRepository.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-03-30T10:35:55.4Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 8,
+              "Title": "DBContext.cs",
+              "DocumentMoniker": "C:\\Users\\napoleQuang\\Downloads\\BackEnd\\BackEnd\\Models\\DAL\\DBContext.cs",
+              "RelativeDocumentMoniker": "BackEnd\\Models\\DAL\\DBContext.cs",
+              "ToolTip": "C:\\Users\\napoleQuang\\Downloads\\BackEnd\\BackEnd\\Models\\DAL\\DBContext.cs",
+              "RelativeToolTip": "BackEnd\\Models\\DAL\\DBContext.cs",
+              "ViewState": "AQIAAAMAAAAAAAAAAAAAAAYAAAAdAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-03-30T10:35:26.143Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 9,
+              "Title": "Bill.cs",
+              "DocumentMoniker": "C:\\Users\\napoleQuang\\Downloads\\BackEnd\\BackEnd\\Models\\Domains\\Bill.cs",
+              "RelativeDocumentMoniker": "BackEnd\\Models\\Domains\\Bill.cs",
+              "ToolTip": "C:\\Users\\napoleQuang\\Downloads\\BackEnd\\BackEnd\\Models\\Domains\\Bill.cs",
+              "RelativeToolTip": "BackEnd\\Models\\Domains\\Bill.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-03-30T10:35:24.127Z",
+              "EditorCaption": ""
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}
