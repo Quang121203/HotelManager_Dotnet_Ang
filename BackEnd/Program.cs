@@ -1,5 +1,7 @@
 using BackEnd.DataAccess;
 using BackEnd.Models.DAL;
+using BackEnd.Services.Implements;
+using BackEnd.Services.Interfaces;
 using Microsoft.EntityFrameworkCore;
 
 var builder = WebApplication.CreateBuilder(args);
@@ -11,7 +13,8 @@ builder.Services.AddDbContext<AppDBContext>(options => {
     options.UseSqlServer(connectionString);
 });
 
-
+builder.Services.AddScoped<IRoomTypeService, RoomTypeService>();
+builder.Services.AddScoped<IRoomService, RoomService>();
 builder.Services.AddScoped<IUnitOfWork, UnitOfWork>();
 
 

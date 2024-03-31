@@ -11,9 +11,9 @@ namespace BackEnd.Models.Domains
 
         // Navigation properties
         [JsonIgnore]
-        public Room Room { get; set; }
+        public Room? Room { get; set; }
         [JsonIgnore]
-        public Reservation Reservation { get; set; }
+        public Reservation? Reservation { get; set; }
 
     }
 }

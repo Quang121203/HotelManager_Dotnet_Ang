@@ -12,9 +12,9 @@ namespace BackEnd.Models.Domains
 
         // Navigation properties
         [JsonIgnore]
-        public Guest Guest { get; set; }
+        public Guest? Guest { get; set; }
         [JsonIgnore]
-        public Service Service { get; set; }
+        public Service? Service { get; set; }
 
         
     }

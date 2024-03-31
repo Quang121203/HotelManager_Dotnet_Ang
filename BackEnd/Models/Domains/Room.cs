@@ -13,7 +13,7 @@ namespace BackEnd.Models.Domains
         public DateTimeOffset DateCreated { get; set; } = DateTime.Now;
 
         [JsonIgnore]
-        public RoomType RoomType { get; set; }
+        public RoomType? RoomType { get; set; }
         [JsonIgnore]
         public ICollection<ReservationRoom>? ReservationRooms { get; set; }
     }

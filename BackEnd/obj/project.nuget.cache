@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "KpGL0u2BmFVeXQmkvZZVKpNDilKSZFdPbk8XwCjGh0O6/ewJ4RQNv5qnhse5XqJYRXYbqx77DxEnV6wUYmIczQ==",
+  "dgSpecHash": "EzvbwrakXPUZmOPmoJWkfdEU3TILbbl7uOKF6Jr+qGRT/yiTy0jYqmk5fgBzMNhh0G9Y4G4Kt0V1pBQfI8ro3g==",
   "success": true,
-  "projectFilePath": "C:\\Users\\napoleQuang\\Downloads\\BackEnd\\BackEnd\\BackEnd.csproj",
+  "projectFilePath": "C:\\Users\\napoleQuang\\Downloads\\web\\BackEnd\\BackEnd\\BackEnd.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\napoleQuang\\.nuget\\packages\\azure.core\\1.35.0\\azure.core.1.35.0.nupkg.sha512",
     "C:\\Users\\napoleQuang\\.nuget\\packages\\azure.identity\\1.10.3\\azure.identity.1.10.3.nupkg.sha512",

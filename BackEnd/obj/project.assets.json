@@ -4529,11 +4529,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\napoleQuang\\Downloads\\BackEnd\\BackEnd\\BackEnd.csproj",
+      "projectUniqueName": "C:\\Users\\napoleQuang\\Downloads\\web\\BackEnd\\BackEnd\\BackEnd.csproj",
       "projectName": "BackEnd",
-      "projectPath": "C:\\Users\\napoleQuang\\Downloads\\BackEnd\\BackEnd\\BackEnd.csproj",
+      "projectPath": "C:\\Users\\napoleQuang\\Downloads\\web\\BackEnd\\BackEnd\\BackEnd.csproj",
       "packagesPath": "C:\\Users\\napoleQuang\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\napoleQuang\\Downloads\\BackEnd\\BackEnd\\obj\\",
+      "outputPath": "C:\\Users\\napoleQuang\\Downloads\\web\\BackEnd\\BackEnd\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
         "C:\\Users\\napoleQuang\\AppData\\Roaming\\NuGet\\NuGet.Config",
