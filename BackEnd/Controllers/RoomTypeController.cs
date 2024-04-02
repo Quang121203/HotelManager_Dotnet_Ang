@@ -1,3 +1,4 @@
+using Azure;
 using BackEnd.Models.Domains;
 using BackEnd.Services.Interfaces;
 using Microsoft.AspNetCore.Mvc;
@@ -10,6 +11,9 @@ namespace BackEnd.Controllers
     {
 
         private readonly IRoomTypeService roomTypeService;
+
+    
+
         public RoomTypeController(IRoomTypeService roomTypeService)
         {
             this.roomTypeService = roomTypeService;
@@ -18,40 +22,36 @@ namespace BackEnd.Controllers
         [HttpGet("[action]/{id}")]
         public async Task<IActionResult> GetRoomType([FromRoute]string id)
         {
-            RoomType roomType = await this.roomTypeService.GetRoomType(id);
-            if(roomType == null) return NotFound();
-            return Ok(roomType);
+            var response = await this.roomTypeService.GetRoomType(id);
+            return Ok(response);
         }
 
         [HttpGet("[action]")]
         public async Task<IActionResult> GetAllRoomType()
         {
-            List<RoomType> roomTypes = await this.roomTypeService.GetAllRoomType();
-            return Ok(roomTypes);
+            var response = await this.roomTypeService.GetAllRoomType();
+            return Ok(response);
         }
 
         [HttpPost("[action]")]
         public async Task<IActionResult> CreateRoomType([FromBody] RoomType model)
         {
-            bool result = await this.roomTypeService.CreateRoomType(model);
-            if (result) return Ok();
-            return BadRequest();
+            var response = await this.roomTypeService.CreateRoomType(model);
+            return Ok(response);
         }
 
         [HttpPut("[action]")]
         public async Task<IActionResult> UpdateRoomType([FromBody] RoomType model)
         {
-            bool result = await this.roomTypeService.UpdateRoomType(model);
-            if (result) return Ok();
-            return BadRequest();
+            var response = await this.roomTypeService.UpdateRoomType(model);
+            return Ok(response);
         }
 
         [HttpDelete("[action]/{id}")]
         public async Task<IActionResult> DeleteRoomType([FromRoute] string id)
         {
-            bool result = await this.roomTypeService.DeleteRoomType(id);
-            if (result) return Ok();
-            return BadRequest();
+            var response = await this.roomTypeService.DeleteRoomType(id);
+            return Ok(response);
         }
     }
 }

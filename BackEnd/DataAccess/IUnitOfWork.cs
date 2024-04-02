@@ -10,8 +10,6 @@
         IRepository<Room> RoomRepository { get; set; }
         IRepository<RoomType> RoomTypeRepository { get; set; }
         IRepository<Bill> BillRepository { get; set; }
-        IRepository<Service> ServiceRepository { get; set; }
-        IRepository<GuestService> GuestServiceRepository { get; set; }
 
         Task SaveChangesAsync();
     }

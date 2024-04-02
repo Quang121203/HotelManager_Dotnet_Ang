@@ -51,34 +51,15 @@ namespace BackEnd.Models.DAL
                 .WithMany(res => res.ReservationRooms)
                 .HasForeignKey(rr => rr.ReservationID)
                 .OnDelete(DeleteBehavior.Restrict);
-
-
-            //GuestService
-            modelBuilder.Entity<GuestService>()
-                .HasKey(gs => new { gs.ServiceID, gs.GuestID });
-
-            modelBuilder.Entity<GuestService>()
-                .HasOne(s => s.Service)
-                .WithMany(gs => gs.GuestService)
-                .HasForeignKey(gs => gs.ServiceID)
-                .OnDelete(DeleteBehavior.Restrict);
-
-            modelBuilder.Entity<GuestService>()
-                .HasOne(ls => ls.Guest)
-                .WithMany(gs => gs.GuestService)
-                .HasForeignKey(gs => gs.GuestID)
-                .OnDelete(DeleteBehavior.Restrict);
             #endregion
-        
         }
+
         public DbSet<User> Users { get; set; }
         public DbSet<Guest> Guests { get; set; }
         public DbSet<Reservation> Reservations { get; set; }
         public DbSet<ReservationRoom> ReservationRooms { get; set; }
         public DbSet<Room> Rooms { get; set; }
         public DbSet<RoomType> RoomTypes { get; set; }
-        public DbSet<GuestService> GuestService { get; set; }
         public DbSet<Bill> Bills { get; set; }
-        public DbSet<Service> Services { get; set; }
     }
 }

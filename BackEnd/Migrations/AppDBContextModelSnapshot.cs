@@ -73,27 +73,6 @@ namespace BackEnd.Migrations
                     b.ToTable("Guests");
                 });
 
-            modelBuilder.Entity("BackEnd.Models.Domains.GuestService", b =>
-                {
-                    b.Property<string>("ServiceID")
-                        .HasColumnType("nvarchar(450)");
-
-                    b.Property<string>("GuestID")
-                        .HasColumnType("nvarchar(450)");
-
-                    b.Property<DateTimeOffset>("DateCreated")
-                        .HasColumnType("datetimeoffset");
-
-                    b.Property<int>("Number")
-                        .HasColumnType("int");
-
-                    b.HasKey("ServiceID", "GuestID");
-
-                    b.HasIndex("GuestID");
-
-                    b.ToTable("GuestService");
-                });
-
             modelBuilder.Entity("BackEnd.Models.Domains.Reservation", b =>
                 {
                     b.Property<string>("ReservationID")
@@ -191,30 +170,6 @@ namespace BackEnd.Migrations
                     b.ToTable("RoomTypes");
                 });
 
-            modelBuilder.Entity("BackEnd.Models.Domains.Service", b =>
-                {
-                    b.Property<string>("ID")
-                        .HasColumnType("nvarchar(450)");
-
-                    b.Property<DateTimeOffset>("DateCreated")
-                        .HasColumnType("datetimeoffset");
-
-                    b.Property<string>("Description")
-                        .IsRequired()
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<string>("Name")
-                        .IsRequired()
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<double>("Price")
-                        .HasColumnType("float");
-
-                    b.HasKey("ID");
-
-                    b.ToTable("Services");
-                });
-
             modelBuilder.Entity("BackEnd.Models.Domains.User", b =>
                 {
                     b.Property<string>("Name")
@@ -245,25 +200,6 @@ namespace BackEnd.Migrations
                         .IsRequired();
 
                     b.Navigation("Guest");
-                });
-
-            modelBuilder.Entity("BackEnd.Models.Domains.GuestService", b =>
-                {
-                    b.HasOne("BackEnd.Models.Domains.Guest", "Guest")
-                        .WithMany("GuestService")
-                        .HasForeignKey("GuestID")
-                        .OnDelete(DeleteBehavior.Restrict)
-                        .IsRequired();
-
-                    b.HasOne("BackEnd.Models.Domains.Service", "Service")
-                        .WithMany("GuestService")
-                        .HasForeignKey("ServiceID")
-                        .OnDelete(DeleteBehavior.Restrict)
-                        .IsRequired();
-
-                    b.Navigation("Guest");
-
-                    b.Navigation("Service");
                 });
 
             modelBuilder.Entity("BackEnd.Models.Domains.Reservation", b =>
@@ -311,8 +247,6 @@ namespace BackEnd.Migrations
                 {
                     b.Navigation("Bills");
 
-                    b.Navigation("GuestService");
-
                     b.Navigation("Reservations");
                 });
 
@@ -329,11 +263,6 @@ namespace BackEnd.Migrations
             modelBuilder.Entity("BackEnd.Models.Domains.RoomType", b =>
                 {
                     b.Navigation("Rooms");
-                });
-
-            modelBuilder.Entity("BackEnd.Models.Domains.Service", b =>
-                {
-                    b.Navigation("GuestService");
                 });
 #pragma warning restore 612, 618
         }

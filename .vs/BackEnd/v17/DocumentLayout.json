@@ -3,16 +3,20 @@
   "WorkspaceRootPath": "C:\\Users\\napoleQuang\\Downloads\\web\\BackEnd\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{15F36059-D64D-4792-B014-A70BBC261E59}|BackEnd\\BackEnd.csproj|c:\\users\\napolequang\\downloads\\web\\backend\\backend\\services\\implements\\roomservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{15F36059-D64D-4792-B014-A70BBC261E59}|BackEnd\\BackEnd.csproj|solutionrelative:backend\\services\\implements\\roomservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{15F36059-D64D-4792-B014-A70BBC261E59}|BackEnd\\BackEnd.csproj|c:\\users\\napolequang\\downloads\\web\\backend\\backend\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{15F36059-D64D-4792-B014-A70BBC261E59}|BackEnd\\BackEnd.csproj|solutionrelative:backend\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{15F36059-D64D-4792-B014-A70BBC261E59}|BackEnd\\BackEnd.csproj|c:\\users\\napolequang\\downloads\\web\\backend\\backend\\controllers\\roomcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{15F36059-D64D-4792-B014-A70BBC261E59}|BackEnd\\BackEnd.csproj|solutionrelative:backend\\controllers\\roomcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{15F36059-D64D-4792-B014-A70BBC261E59}|BackEnd\\BackEnd.csproj|c:\\users\\napolequang\\downloads\\web\\backend\\backend\\services\\implements\\reservationservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{15F36059-D64D-4792-B014-A70BBC261E59}|BackEnd\\BackEnd.csproj|solutionrelative:backend\\services\\implements\\reservationservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{15F36059-D64D-4792-B014-A70BBC261E59}|BackEnd\\BackEnd.csproj|c:\\users\\napolequang\\downloads\\web\\backend\\backend\\services\\interfaces\\iroomservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{15F36059-D64D-4792-B014-A70BBC261E59}|BackEnd\\BackEnd.csproj|solutionrelative:backend\\services\\interfaces\\iroomservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{15F36059-D64D-4792-B014-A70BBC261E59}|BackEnd\\BackEnd.csproj|c:\\users\\napolequang\\downloads\\web\\backend\\backend\\models\\dal\\dbcontext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{15F36059-D64D-4792-B014-A70BBC261E59}|BackEnd\\BackEnd.csproj|solutionrelative:backend\\models\\dal\\dbcontext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{15F36059-D64D-4792-B014-A70BBC261E59}|BackEnd\\BackEnd.csproj|c:\\users\\napolequang\\downloads\\web\\backend\\backend\\services\\implements\\billservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{15F36059-D64D-4792-B014-A70BBC261E59}|BackEnd\\BackEnd.csproj|solutionrelative:backend\\services\\implements\\billservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
   ],
   "DocumentGroupContainers": [
@@ -22,45 +26,58 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 2,
+          "SelectedChildIndex": 0,
           "Children": [
             {
               "$type": "Document",
-              "DocumentIndex": 1,
-              "Title": "RoomController.cs",
-              "DocumentMoniker": "C:\\Users\\napoleQuang\\Downloads\\web\\BackEnd\\BackEnd\\Controllers\\RoomController.cs",
-              "RelativeDocumentMoniker": "BackEnd\\Controllers\\RoomController.cs",
-              "ToolTip": "C:\\Users\\napoleQuang\\Downloads\\web\\BackEnd\\BackEnd\\Controllers\\RoomController.cs",
-              "RelativeToolTip": "BackEnd\\Controllers\\RoomController.cs",
-              "ViewState": "AQIAAEUAAAAAAAAAAAAQwCgAAAAdAAAA",
+              "DocumentIndex": 0,
+              "Title": "Program.cs",
+              "DocumentMoniker": "C:\\Users\\napoleQuang\\Downloads\\web\\BackEnd\\BackEnd\\Program.cs",
+              "RelativeDocumentMoniker": "BackEnd\\Program.cs",
+              "ToolTip": "C:\\Users\\napoleQuang\\Downloads\\web\\BackEnd\\BackEnd\\Program.cs",
+              "RelativeToolTip": "BackEnd\\Program.cs",
+              "ViewState": "AQIAAAMAAAAAAAAAAAAAABUAAAAAAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-03-31T12:45:45.251Z",
+              "WhenOpened": "2024-04-02T14:57:16.188Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
               "DocumentIndex": 2,
-              "Title": "IRoomService.cs",
-              "DocumentMoniker": "C:\\Users\\napoleQuang\\Downloads\\web\\BackEnd\\BackEnd\\Services\\Interfaces\\IRoomService.cs",
-              "RelativeDocumentMoniker": "BackEnd\\Services\\Interfaces\\IRoomService.cs",
-              "ToolTip": "C:\\Users\\napoleQuang\\Downloads\\web\\BackEnd\\BackEnd\\Services\\Interfaces\\IRoomService.cs",
-              "RelativeToolTip": "BackEnd\\Services\\Interfaces\\IRoomService.cs",
-              "ViewState": "AQIAAAcAAAAAAAAAAAAzwA4AAAAdAAAA",
+              "Title": "DBContext.cs",
+              "DocumentMoniker": "C:\\Users\\napoleQuang\\Downloads\\web\\BackEnd\\BackEnd\\Models\\DAL\\DBContext.cs",
+              "RelativeDocumentMoniker": "BackEnd\\Models\\DAL\\DBContext.cs",
+              "ToolTip": "C:\\Users\\napoleQuang\\Downloads\\web\\BackEnd\\BackEnd\\Models\\DAL\\DBContext.cs",
+              "RelativeToolTip": "BackEnd\\Models\\DAL\\DBContext.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAYAAAAdAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-03-31T10:19:51.865Z",
+              "WhenOpened": "2024-04-02T14:53:21.723Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 0,
-              "Title": "RoomService.cs",
-              "DocumentMoniker": "C:\\Users\\napoleQuang\\Downloads\\web\\BackEnd\\BackEnd\\Services\\Implements\\RoomService.cs",
-              "RelativeDocumentMoniker": "BackEnd\\Services\\Implements\\RoomService.cs",
-              "ToolTip": "C:\\Users\\napoleQuang\\Downloads\\web\\BackEnd\\BackEnd\\Services\\Implements\\RoomService.cs",
-              "RelativeToolTip": "BackEnd\\Services\\Implements\\RoomService.cs",
-              "ViewState": "AQIAAEEAAAAAAAAAAAAowFQAAAAAAAAA",
+              "DocumentIndex": 1,
+              "Title": "ReservationService.cs",
+              "DocumentMoniker": "C:\\Users\\napoleQuang\\Downloads\\web\\BackEnd\\BackEnd\\Services\\Implements\\ReservationService.cs",
+              "RelativeDocumentMoniker": "BackEnd\\Services\\Implements\\ReservationService.cs",
+              "ToolTip": "C:\\Users\\napoleQuang\\Downloads\\web\\BackEnd\\BackEnd\\Services\\Implements\\ReservationService.cs",
+              "RelativeToolTip": "BackEnd\\Services\\Implements\\ReservationService.cs",
+              "ViewState": "AQIAAAoAAAAAAAAAAAAewBUAAAA8AAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-03-31T10:19:37.645Z",
+              "WhenOpened": "2024-04-02T14:43:39.796Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "BillService.cs",
+              "DocumentMoniker": "C:\\Users\\napoleQuang\\Downloads\\web\\BackEnd\\BackEnd\\Services\\Implements\\BillService.cs",
+              "RelativeDocumentMoniker": "BackEnd\\Services\\Implements\\BillService.cs",
+              "ToolTip": "C:\\Users\\napoleQuang\\Downloads\\web\\BackEnd\\BackEnd\\Services\\Implements\\BillService.cs",
+              "RelativeToolTip": "BackEnd\\Services\\Implements\\BillService.cs",
+              "ViewState": "AQIAAAoAAAAAAAAAAAAzwAAAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-04-02T14:43:30.092Z",
               "EditorCaption": ""
             }
           ]

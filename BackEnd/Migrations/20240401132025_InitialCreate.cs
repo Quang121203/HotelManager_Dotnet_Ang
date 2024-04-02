@@ -43,21 +43,6 @@ namespace BackEnd.Migrations
                 });
 
             migrationBuilder.CreateTable(
-                name: "Services",
-                columns: table => new
-                {
-                    ID = table.Column<string>(type: "nvarchar(450)", nullable: false),
-                    Name = table.Column<string>(type: "nvarchar(max)", nullable: false),
-                    Price = table.Column<double>(type: "float", nullable: false),
-                    Description = table.Column<string>(type: "nvarchar(max)", nullable: false),
-                    DateCreated = table.Column<DateTimeOffset>(type: "datetimeoffset", nullable: false)
-                },
-                constraints: table =>
-                {
-                    table.PrimaryKey("PK_Services", x => x.ID);
-                });
-
-            migrationBuilder.CreateTable(
                 name: "Users",
                 columns: table => new
                 {
@@ -137,32 +122,6 @@ namespace BackEnd.Migrations
                 });
 
             migrationBuilder.CreateTable(
-                name: "GuestService",
-                columns: table => new
-                {
-                    GuestID = table.Column<string>(type: "nvarchar(450)", nullable: false),
-                    ServiceID = table.Column<string>(type: "nvarchar(450)", nullable: false),
-                    Number = table.Column<int>(type: "int", nullable: false),
-                    DateCreated = table.Column<DateTimeOffset>(type: "datetimeoffset", nullable: false)
-                },
-                constraints: table =>
-                {
-                    table.PrimaryKey("PK_GuestService", x => new { x.ServiceID, x.GuestID });
-                    table.ForeignKey(
-                        name: "FK_GuestService_Guests_GuestID",
-                        column: x => x.GuestID,
-                        principalTable: "Guests",
-                        principalColumn: "GuestID",
-                        onDelete: ReferentialAction.Restrict);
-                    table.ForeignKey(
-                        name: "FK_GuestService_Services_ServiceID",
-                        column: x => x.ServiceID,
-                        principalTable: "Services",
-                        principalColumn: "ID",
-                        onDelete: ReferentialAction.Restrict);
-                });
-
-            migrationBuilder.CreateTable(
                 name: "ReservationRooms",
                 columns: table => new
                 {
@@ -193,11 +152,6 @@ namespace BackEnd.Migrations
                 column: "IDGuest");
 
             migrationBuilder.CreateIndex(
-                name: "IX_GuestService_GuestID",
-                table: "GuestService",
-                column: "GuestID");
-
-            migrationBuilder.CreateIndex(
                 name: "IX_ReservationRooms_ReservationID",
                 table: "ReservationRooms",
                 column: "ReservationID");
@@ -220,16 +174,10 @@ namespace BackEnd.Migrations
                 name: "Bills");
 
             migrationBuilder.DropTable(
-                name: "GuestService");
-
-            migrationBuilder.DropTable(
                 name: "ReservationRooms");
 
             migrationBuilder.DropTable(
                 name: "Users");
-
-            migrationBuilder.DropTable(
-                name: "Services");
 
             migrationBuilder.DropTable(
                 name: "Reservations");

@@ -15,6 +15,11 @@ builder.Services.AddDbContext<AppDBContext>(options => {
 
 builder.Services.AddScoped<IRoomTypeService, RoomTypeService>();
 builder.Services.AddScoped<IRoomService, RoomService>();
+builder.Services.AddScoped<IGuestService, GuestService>();
+builder.Services.AddScoped<IReservationService, ReservationService>();
+builder.Services.AddScoped<IReservationRoomService, ReservationRoomService>();
+builder.Services.AddScoped<IBillService, BillService>();
+
 builder.Services.AddScoped<IUnitOfWork, UnitOfWork>();
 
 

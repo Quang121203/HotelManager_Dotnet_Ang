@@ -11,7 +11,7 @@ namespace BackEnd.Services.Implements
             this.unitOfWork = unitOfWork;
         }
 
-        public async Task<bool> CreateRoomType(RoomType model)
+        public async Task<object> CreateRoomType(RoomType model)
         {
             RoomType check = await this.unitOfWork.RoomTypeRepository.GetSingleAsync(rt=>rt.Name == model.Name);
             if(check == null)
@@ -24,38 +24,87 @@ namespace BackEnd.Services.Implements
 
                 await this.unitOfWork.RoomTypeRepository.InsertAsync(roomType);
                 await this.unitOfWork.SaveChangesAsync();
-                return true;
+                return new
+                {
+                    EC = 0,
+                    EM = "RoomType has been create",
+                    DT = roomType,
+                }; ;
             }
-            return false;
+            return new
+            {
+                EC = 1,
+                EM = "RoomType's name already exist",
+                DT = "",
+            }; ;
         }
 
-        public async Task<bool> DeleteRoomType(string id)
+        public async Task<object> DeleteRoomType(string id)
         {
+          
             bool check = await this.unitOfWork.RoomTypeRepository.DeleteAsync(id);
             if (check)
             {
                 await this.unitOfWork.SaveChangesAsync();
+                return new
+                {
+                    EC = 0,
+                    EM = "RoomType has been delete",
+                    DT = "",
+                };
             }
-            return check;
+            return new
+            {
+                EC = 1,
+                EM = "RoomType not found",
+                DT = "",
+            };
         }
 
-        public async Task<List<RoomType>> GetAllRoomType()
+        public async Task<object> GetAllRoomType()
         {
-            return await this.unitOfWork.RoomTypeRepository.GetAsync();
+            List<RoomType> roomTypes= await this.unitOfWork.RoomTypeRepository.GetAsync();
+            return new 
+            {
+                EC = 0,
+                EM = "",
+                DT = roomTypes,
+            };
         }
 
-        public async Task<RoomType> GetRoomType(string id)
+        public async Task<object> GetRoomType(string id)
         {
-            return await this.unitOfWork.RoomTypeRepository.GetSingleAsync(id);
+            RoomType roomType = await this.unitOfWork.RoomTypeRepository.GetSingleAsync(id);
+            return new
+            {
+                EC = 0,
+                EM = "",
+                DT = roomType,
+            };
         }
 
-        public async Task<bool> UpdateRoomType(RoomType model)
+        public async Task<object> UpdateRoomType(RoomType model)
         {
             RoomType roomType = await this.unitOfWork.RoomTypeRepository.GetSingleAsync(model.RoomTypeID);
-
+            RoomType check = await this.unitOfWork.RoomTypeRepository.GetSingleAsync(rt => rt.Name == model.Name);
             if (roomType == null)
             {
-                return false;
+                return new
+                {
+                    EC = 1,
+                    EM = "RoomType not found",
+                    DT = "",
+                };
+            }
+
+            if(check!=null && model.Name!= roomType.Name)
+            {
+                return new
+                {
+                    EC = 1,
+                    EM = "RoomType's name already exist",
+                    DT = "",
+                };
             }
 
             roomType.Name = model.Name;
@@ -63,7 +112,12 @@ namespace BackEnd.Services.Implements
             roomType.DailyPrice = model.DailyPrice;
             this.unitOfWork.RoomTypeRepository.Update(roomType);
             await this.unitOfWork.SaveChangesAsync();
-            return true;
+            return new
+            {
+                EC = 0,
+                EM = "RoomType has been updated",
+                DT = "",
+            };
         }
     }
 }

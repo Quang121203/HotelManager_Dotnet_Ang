@@ -16,8 +16,6 @@ namespace BackEnd.Models.Domains
         [JsonIgnore]
         public ICollection<Reservation>? Reservations { get; set; }
         [JsonIgnore]
-        public ICollection<GuestService>? GuestService { get; set; }
-        [JsonIgnore]
         public ICollection<Bill>? Bills { get; set; }
     }
 }
