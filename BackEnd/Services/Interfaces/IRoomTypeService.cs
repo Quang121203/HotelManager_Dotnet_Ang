@@ -4,7 +4,7 @@ namespace BackEnd.Services.Interfaces
 {
     public interface IRoomTypeService
     {
-        Task<object> GetRoomType(string id);
+        Task<RoomType> GetRoomType(string id);
         Task<object> GetAllRoomType();
         Task<object> CreateRoomType(RoomType roomType);
         Task<object> UpdateRoomType(RoomType roomType);

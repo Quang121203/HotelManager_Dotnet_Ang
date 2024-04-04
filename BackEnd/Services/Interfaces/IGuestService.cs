@@ -10,6 +10,6 @@ namespace BackEnd.Services.Interfaces
         Task<object> UpdateGuest(Guest model);
         Task<object> DeleteGuest(string id);
         Task<object> DeleteAllGuests();
-        Task<Guest> GetGuestByRoom(string RoomId);
+        Task<object> GetGuestByRoom(string RoomId);
     }
 }

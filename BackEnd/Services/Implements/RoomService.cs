@@ -86,7 +86,7 @@ namespace BackEnd.Services.Implements
                 EC = 0,
                 EM = "All rooms have been delete",
                 DT = "",
-            }; ;
+            }; 
         }
 
         public async Task<object> DeleteRoom(string roomId)

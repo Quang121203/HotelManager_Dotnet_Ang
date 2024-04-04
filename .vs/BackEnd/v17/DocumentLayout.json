@@ -3,20 +3,16 @@
   "WorkspaceRootPath": "C:\\Users\\napoleQuang\\Downloads\\web\\BackEnd\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{15F36059-D64D-4792-B014-A70BBC261E59}|BackEnd\\BackEnd.csproj|c:\\users\\napolequang\\downloads\\web\\backend\\backend\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{15F36059-D64D-4792-B014-A70BBC261E59}|BackEnd\\BackEnd.csproj|solutionrelative:backend\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{15F36059-D64D-4792-B014-A70BBC261E59}|BackEnd\\BackEnd.csproj|c:\\users\\napolequang\\downloads\\web\\backend\\backend\\controllers\\reservationcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{15F36059-D64D-4792-B014-A70BBC261E59}|BackEnd\\BackEnd.csproj|solutionrelative:backend\\controllers\\reservationcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{15F36059-D64D-4792-B014-A70BBC261E59}|BackEnd\\BackEnd.csproj|c:\\users\\napolequang\\downloads\\web\\backend\\backend\\services\\interfaces\\ireservationservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{15F36059-D64D-4792-B014-A70BBC261E59}|BackEnd\\BackEnd.csproj|solutionrelative:backend\\services\\interfaces\\ireservationservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{15F36059-D64D-4792-B014-A70BBC261E59}|BackEnd\\BackEnd.csproj|c:\\users\\napolequang\\downloads\\web\\backend\\backend\\services\\implements\\reservationservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{15F36059-D64D-4792-B014-A70BBC261E59}|BackEnd\\BackEnd.csproj|solutionrelative:backend\\services\\implements\\reservationservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{15F36059-D64D-4792-B014-A70BBC261E59}|BackEnd\\BackEnd.csproj|c:\\users\\napolequang\\downloads\\web\\backend\\backend\\models\\dal\\dbcontext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{15F36059-D64D-4792-B014-A70BBC261E59}|BackEnd\\BackEnd.csproj|solutionrelative:backend\\models\\dal\\dbcontext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{15F36059-D64D-4792-B014-A70BBC261E59}|BackEnd\\BackEnd.csproj|c:\\users\\napolequang\\downloads\\web\\backend\\backend\\services\\implements\\billservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{15F36059-D64D-4792-B014-A70BBC261E59}|BackEnd\\BackEnd.csproj|solutionrelative:backend\\services\\implements\\billservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
   ],
   "DocumentGroupContainers": [
@@ -26,58 +22,45 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 0,
+          "SelectedChildIndex": 2,
           "Children": [
             {
               "$type": "Document",
-              "DocumentIndex": 0,
-              "Title": "Program.cs",
-              "DocumentMoniker": "C:\\Users\\napoleQuang\\Downloads\\web\\BackEnd\\BackEnd\\Program.cs",
-              "RelativeDocumentMoniker": "BackEnd\\Program.cs",
-              "ToolTip": "C:\\Users\\napoleQuang\\Downloads\\web\\BackEnd\\BackEnd\\Program.cs",
-              "RelativeToolTip": "BackEnd\\Program.cs",
-              "ViewState": "AQIAAAMAAAAAAAAAAAAAABUAAAAAAAAA",
+              "DocumentIndex": 1,
+              "Title": "IReservationService.cs",
+              "DocumentMoniker": "C:\\Users\\napoleQuang\\Downloads\\web\\BackEnd\\BackEnd\\Services\\Interfaces\\IReservationService.cs",
+              "RelativeDocumentMoniker": "BackEnd\\Services\\Interfaces\\IReservationService.cs",
+              "ToolTip": "C:\\Users\\napoleQuang\\Downloads\\web\\BackEnd\\BackEnd\\Services\\Interfaces\\IReservationService.cs",
+              "RelativeToolTip": "BackEnd\\Services\\Interfaces\\IReservationService.cs",
+              "ViewState": "AQIAAAoAAAAAAAAAAAA5wBMAAAATAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-04-02T14:57:16.188Z",
+              "WhenOpened": "2024-04-04T13:02:23.771Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
               "DocumentIndex": 2,
-              "Title": "DBContext.cs",
-              "DocumentMoniker": "C:\\Users\\napoleQuang\\Downloads\\web\\BackEnd\\BackEnd\\Models\\DAL\\DBContext.cs",
-              "RelativeDocumentMoniker": "BackEnd\\Models\\DAL\\DBContext.cs",
-              "ToolTip": "C:\\Users\\napoleQuang\\Downloads\\web\\BackEnd\\BackEnd\\Models\\DAL\\DBContext.cs",
-              "RelativeToolTip": "BackEnd\\Models\\DAL\\DBContext.cs",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAYAAAAdAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-04-02T14:53:21.723Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 1,
               "Title": "ReservationService.cs",
               "DocumentMoniker": "C:\\Users\\napoleQuang\\Downloads\\web\\BackEnd\\BackEnd\\Services\\Implements\\ReservationService.cs",
               "RelativeDocumentMoniker": "BackEnd\\Services\\Implements\\ReservationService.cs",
               "ToolTip": "C:\\Users\\napoleQuang\\Downloads\\web\\BackEnd\\BackEnd\\Services\\Implements\\ReservationService.cs",
               "RelativeToolTip": "BackEnd\\Services\\Implements\\ReservationService.cs",
-              "ViewState": "AQIAAAoAAAAAAAAAAAAewBUAAAA8AAAA",
+              "ViewState": "AQIAAHgBAAAAAAAAAAAmwIMBAAAgAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-04-02T14:43:39.796Z",
+              "WhenOpened": "2024-04-04T12:44:05.283Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 3,
-              "Title": "BillService.cs",
-              "DocumentMoniker": "C:\\Users\\napoleQuang\\Downloads\\web\\BackEnd\\BackEnd\\Services\\Implements\\BillService.cs",
-              "RelativeDocumentMoniker": "BackEnd\\Services\\Implements\\BillService.cs",
-              "ToolTip": "C:\\Users\\napoleQuang\\Downloads\\web\\BackEnd\\BackEnd\\Services\\Implements\\BillService.cs",
-              "RelativeToolTip": "BackEnd\\Services\\Implements\\BillService.cs",
-              "ViewState": "AQIAAAoAAAAAAAAAAAAzwAAAAAAAAAAA",
+              "DocumentIndex": 0,
+              "Title": "ReservationController.cs",
+              "DocumentMoniker": "C:\\Users\\napoleQuang\\Downloads\\web\\BackEnd\\BackEnd\\Controllers\\ReservationController.cs",
+              "RelativeDocumentMoniker": "BackEnd\\Controllers\\ReservationController.cs",
+              "ToolTip": "C:\\Users\\napoleQuang\\Downloads\\web\\BackEnd\\BackEnd\\Controllers\\ReservationController.cs",
+              "RelativeToolTip": "BackEnd\\Controllers\\ReservationController.cs",
+              "ViewState": "AQIAAD8AAAAAAAAAAAAowB8AAAAJAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-04-02T14:43:30.092Z",
+              "WhenOpened": "2024-04-04T12:43:58.627Z",
               "EditorCaption": ""
             }
           ]

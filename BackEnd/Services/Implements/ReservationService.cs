@@ -19,12 +19,17 @@ namespace BackEnd.Services.Implements
             this.billService = billService;
             this.dbContext = dbContext;
         }
-        public async Task<bool> Cancel(string ReservationId)
+        public async Task<object> Cancel(string ReservationId)
         {
             var reservation = await this.unitOfWork.ReservationRepository.GetSingleAsync(ReservationId);
             if (reservation == null || reservation.IsConfirmed == true)
             {
-                return false;
+                return new
+                {
+                    EC = 1,
+                    EM = "Reservation not found",
+                    DT = "",
+                };
             }
             var bill = await this.unitOfWork.BillRepository.GetSingleAsync(d => d.Status == false && d.IDGuest == reservation.GuestID);
 
@@ -44,15 +49,25 @@ namespace BackEnd.Services.Implements
             await this.unitOfWork.ReservationRepository.DeleteAsync(reservation.ReservationID);
             await this.unitOfWork.SaveChangesAsync();
 
-            return true;
+            return new
+            {
+                EC = 0,
+                EM = "Reservation has been cancel",
+                DT = "",
+            };
         }
 
-        public async Task<bool> CheckIn(string ReservationId)
+        public async Task<object> CheckIn(string ReservationId)
         {
             var reservation = await this.unitOfWork.ReservationRepository.GetSingleAsync(ReservationId);
             if (reservation == null)
             {
-                return false;
+                return new
+                {
+                    EC = 1,
+                    EM = "Reservation not found",
+                    DT = "",
+                };
             }
 
             reservation.IsConfirmed = true;
@@ -70,15 +85,25 @@ namespace BackEnd.Services.Implements
                 await this.roomService.UpdateRoom(room);
                 await this.unitOfWork.SaveChangesAsync();
             }
-            return true;
+            return new
+            {
+                EC = 0,
+                EM = "Reservation has been check in",
+                DT = "",
+            };
         }
 
-        public async Task<bool> CheckOut(string ReservationId)
+        public async Task<object> CheckOut(string ReservationId)
         {
             var reservation = await this.unitOfWork.ReservationRepository.GetSingleAsync(ReservationId);
             if (reservation == null || reservation.IsConfirmed == false)
             {
-                return false;
+                return new
+                {
+                    EC = 1,
+                    EM = "Reservation not found",
+                    DT = "",
+                };
             }
 
             //update bill
@@ -110,10 +135,15 @@ namespace BackEnd.Services.Implements
             await this.unitOfWork.SaveChangesAsync();
 
 
-            return true;
+            return new
+            {
+                EC = 0,
+                EM = "Reservation has been check out",
+                DT = "",
+            };
         }
 
-        public async Task<bool> CreateReservation(Reservation model)
+        public async Task<object> CreateReservation(Reservation model)
         {
             var guestId = await this.unitOfWork.GuestRepository.GetSingleAsync(model.GuestID);
 
@@ -129,14 +159,30 @@ namespace BackEnd.Services.Implements
                 };
                 await this.unitOfWork.ReservationRepository.InsertAsync(reservation);
                 await this.unitOfWork.SaveChangesAsync();
-                return true;
+                return new
+                {
+                    EC =0 ,
+                    EM = "Reservation has been create",
+                    DT = reservation,
+                };
             }
-            return false;
+            return new
+            {
+                EC = 1,
+                EM = "Guest not found",
+                DT = "",
+            };
         }
 
-        public async Task<List<Reservation>> GetAllReservation()
+        public async Task<object> GetAllReservation()
         {
-            return await this.unitOfWork.ReservationRepository.GetAsync();
+            List<Reservation> reservations= await this.unitOfWork.ReservationRepository.GetAsync();
+            return new
+            {
+                EC = 0,
+                EM = "",
+                DT = reservations,
+            };
         }
 
         public async Task<List<Reservation>> GetReservationByDate(DateTime StartTime, DateTime EndTime)
@@ -145,14 +191,26 @@ namespace BackEnd.Services.Implements
 
         }
 
-        public async Task<List<Reservation>> GetReservationByGuestID(string GuestId)
+        public async Task<object> GetReservationByGuestID(string GuestId)
         {
-            return await this.unitOfWork.ReservationRepository.GetAsync(d => d.GuestID == GuestId);
+            Reservation reservation= await this.unitOfWork.ReservationRepository.GetSingleAsync(d => d.GuestID == GuestId);
+            return new
+            {
+                EC = 0,
+                EM = "",
+                DT = reservation,
+            };
         }
 
-        public async Task<Reservation> GetReservationByID(string id)
+        public async Task<object> GetReservationByID(string id)
         {
-            return await this.unitOfWork.ReservationRepository.GetSingleAsync(d => d.ReservationID == id);
+            Reservation reservation= await this.unitOfWork.ReservationRepository.GetSingleAsync(id);
+            return new
+            {
+                EC = 0,
+                EM = "",
+                DT = reservation
+            };
         }
 
         public async Task<Reservation> GetReservationByRoom(string RoomId)
@@ -165,18 +223,29 @@ namespace BackEnd.Services.Implements
             return await this.unitOfWork.ReservationRepository.GetSingleAsync(d => (d.ReservationID == reservationRoom.ReservationID && d.IsConfirmed == true));
         }
 
-        public async Task<List<Reservation>> GetReservationByWasConfirm(bool isConfirm)
+        public async Task<object> GetReservationByWasConfirm(bool isConfirm)
         {
-            return await this.unitOfWork.ReservationRepository.GetAsync(d => d.IsConfirmed == isConfirm);
+            List<Reservation> reservations= await this.unitOfWork.ReservationRepository.GetAsync(d => d.IsConfirmed == isConfirm);
+            return new
+            {
+                EC = 0,
+                EM = "",
+                DT = reservations,
+            };
         }
 
-        public async Task<bool> ReserveRooms(ReservationVM reservationvm)
+        public async Task<object> ReserveRooms(ReservationVM reservationvm)
         {
             RoomType rt = await this.unitOfWork.RoomTypeRepository.GetSingleAsync(d => d.RoomTypeID == reservationvm.RoomTypeId);
             var check = await this.roomService.CheckRoom(reservationvm.StartTime, reservationvm.EndTime, rt, reservationvm.NumberOfRooms);
             if (!check)
             {
-                return false;
+                return new
+                {
+                    EC = 1,
+                    EM = "Failed to reserve rooms. Not enough available rooms of the specified type",
+                    DT = "",
+                };
             }
             //Add guest
             //if exist reservation , not add
@@ -254,23 +323,39 @@ namespace BackEnd.Services.Implements
                 checkBill.Sum = checkBill.Sum + reservationvm.NumberOfRooms * rt.DailyPrice * differenceInDays;             
                 await this.billService.UpdateBill(checkBill);
             }
-            return true;
+
+            return new
+            {
+                EC = 0,
+                EM = "Rooms reserved successfully",
+                DT = "",
+            };
         }
 
-        public async Task<bool> UpdateReservation(Reservation model)
+        public async Task<object> UpdateReservation(Reservation model)
         {
             var reservation = await this.unitOfWork.ReservationRepository.GetSingleAsync(model.ReservationID);
 
             if (reservation == null)
             {
-                throw new Exception("Reservation not found");
+                return new
+                {
+                    EC = 1,
+                    EM = "Reservation not found",
+                    DT = "",
+                };
             }
 
             var guestId = await this.unitOfWork.GuestRepository.GetSingleAsync(model.GuestID);
 
             if (guestId == null)
             {
-                return false;
+                return new
+                {
+                    EC = 1,
+                    EM = "Guest not found",
+                    DT = "",
+                };
             }
 
             reservation.GuestID = model.GuestID;
@@ -282,7 +367,43 @@ namespace BackEnd.Services.Implements
 
             this.unitOfWork.ReservationRepository.Update(reservation);
             await this.unitOfWork.SaveChangesAsync();
-            return true;
+            return new
+            {
+                EC = 0,
+                EM = "Reservation has been update",
+                DT = "",
+            };
+        }
+        
+        public async Task<object> DeleteReservation(string id)
+        {
+            //delete reservationroom
+            var ReservationRooms = await this.unitOfWork.ReservationRoomRepository.GetAsync(d => d.ReservationID == id);
+            foreach (var ReservationRoom in ReservationRooms)
+            {
+                dbContext.Set<ReservationRoom>().Remove(ReservationRoom);
+                await dbContext.SaveChangesAsync();
+            }
+
+            //delete reservation
+            bool check = await this.unitOfWork.ReservationRepository.DeleteAsync(id);
+            if (check)
+            {
+                await this.unitOfWork.SaveChangesAsync();
+                return new
+                {
+                    EC = 0,
+                    EM = "Reservation has been delete",
+                    DT = "",
+                };
+            }
+
+            return new
+            {
+                EC = 1,
+                EM = "Reservation not found",
+                DT = "",
+            };
         }
     }
 }

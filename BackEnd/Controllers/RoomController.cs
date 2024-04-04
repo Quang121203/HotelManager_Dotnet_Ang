@@ -1,5 +1,7 @@
 ﻿using Azure;
+using BackEnd.DataAccess;
 using BackEnd.Models.Domains;
+using BackEnd.Services.Implements;
 using BackEnd.Services.Interfaces;
 using Microsoft.AspNetCore.Mvc;
 
@@ -10,10 +12,13 @@ namespace BackEnd.Controllers
     public class RoomController : Controller
     {
         private readonly IRoomService roomService;
+        private readonly IRoomTypeService roomTypeService;
+ 
 
-        public RoomController(IRoomService roomService)
+        public RoomController(IRoomService roomService, IRoomTypeService roomTypeService)
         {
             this.roomService = roomService;
+            this.roomTypeService = roomTypeService;
         }
 
 
@@ -54,7 +59,15 @@ namespace BackEnd.Controllers
         }
 
         [HttpPost("[action]")]
-        public async Task<ActionResult> AddRoom([FromBody] Room model)
+        public async Task<IActionResult> GetRoomNotReser([FromBody] ReservationVM model)
+        {
+            RoomType rt = await this.roomTypeService.GetRoomType(model.RoomTypeId);
+            List<Room> rooms = await this.roomService.GetRoomNotReser(model.StartTime, model.EndTime, rt);
+            return Ok(rooms);
+        }
+
+        [HttpPost("[action]")]
+        public async Task<IActionResult> AddRoom([FromBody] Room model)
         {
             var response = await this.roomService.CreateRoom(model);
             return Ok(response);
@@ -62,7 +75,7 @@ namespace BackEnd.Controllers
 
         
         [HttpPut("[action]")]
-        public async Task<ActionResult> UpdateRoom([FromBody] Room model)
+        public async Task<IActionResult> UpdateRoom([FromBody] Room model)
         {          
             var response = await this.roomService.UpdateRoom(model);
             return Ok(response);
@@ -70,14 +83,14 @@ namespace BackEnd.Controllers
 
 
         [HttpDelete("[action]/{id}")]
-        public async Task<ActionResult> DeleteRoom([FromRoute] string id)
+        public async Task<IActionResult> DeleteRoom([FromRoute] string id)
         {
             var response = await this.roomService.DeleteRoom(id);
             return Ok(response);
         }
 
         [HttpDelete("[action]")]
-        public async Task<ActionResult> DeleteAllRoomTypes()
+        public async Task<IActionResult> DeleteAllRoomTypes()
         {
             var response = await this.roomService.DeleteAllRoom();
             return Ok(response);      

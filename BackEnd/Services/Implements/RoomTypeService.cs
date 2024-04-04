@@ -72,15 +72,10 @@ namespace BackEnd.Services.Implements
             };
         }
 
-        public async Task<object> GetRoomType(string id)
+        public async Task<RoomType> GetRoomType(string id)
         {
             RoomType roomType = await this.unitOfWork.RoomTypeRepository.GetSingleAsync(id);
-            return new
-            {
-                EC = 0,
-                EM = "",
-                DT = roomType,
-            };
+            return roomType;
         }
 
         public async Task<object> UpdateRoomType(RoomType model)

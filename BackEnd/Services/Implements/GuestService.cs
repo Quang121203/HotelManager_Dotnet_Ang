@@ -92,11 +92,17 @@ namespace BackEnd.Services.Implements
             };
         }
 
-        public async Task<Guest> GetGuestByRoom(string RoomId)
+        public async Task<object> GetGuestByRoom(string RoomId)
         {
             Reservation reservation = await this.reservationService.GetReservationByRoom(RoomId);
+            Guest guest= await this.unitOfWork.GuestRepository.GetSingleAsync(reservation?.GuestID);
 
-            return await this.unitOfWork.GuestRepository.GetSingleAsync(reservation?.GuestID);
+            return new
+            {
+                EC = 0,
+                EM = "",
+                DT = guest,
+            };
         }
 
         public async Task<object> UpdateGuest(Guest model)
