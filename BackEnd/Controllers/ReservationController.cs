@@ -6,7 +6,7 @@ using Microsoft.AspNetCore.SignalR;
 
 namespace BackEnd.Controllers
 {
-    [Route("api/[controller]")]
+    [Route("[controller]")]
     [ApiController]
     public class ReservationController : Controller
     {

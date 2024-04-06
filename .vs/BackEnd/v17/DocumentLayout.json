@@ -1,71 +1,12 @@
 {
   "Version": 1,
   "WorkspaceRootPath": "C:\\Users\\napoleQuang\\Downloads\\web\\BackEnd\\",
-  "Documents": [
-    {
-      "AbsoluteMoniker": "D:0:0:{15F36059-D64D-4792-B014-A70BBC261E59}|BackEnd\\BackEnd.csproj|c:\\users\\napolequang\\downloads\\web\\backend\\backend\\controllers\\reservationcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{15F36059-D64D-4792-B014-A70BBC261E59}|BackEnd\\BackEnd.csproj|solutionrelative:backend\\controllers\\reservationcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{15F36059-D64D-4792-B014-A70BBC261E59}|BackEnd\\BackEnd.csproj|c:\\users\\napolequang\\downloads\\web\\backend\\backend\\services\\interfaces\\ireservationservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{15F36059-D64D-4792-B014-A70BBC261E59}|BackEnd\\BackEnd.csproj|solutionrelative:backend\\services\\interfaces\\ireservationservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{15F36059-D64D-4792-B014-A70BBC261E59}|BackEnd\\BackEnd.csproj|c:\\users\\napolequang\\downloads\\web\\backend\\backend\\services\\implements\\reservationservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{15F36059-D64D-4792-B014-A70BBC261E59}|BackEnd\\BackEnd.csproj|solutionrelative:backend\\services\\implements\\reservationservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    }
-  ],
+  "Documents": [],
   "DocumentGroupContainers": [
     {
       "Orientation": 0,
       "VerticalTabListWidth": 256,
-      "DocumentGroups": [
-        {
-          "DockedWidth": 200,
-          "SelectedChildIndex": 2,
-          "Children": [
-            {
-              "$type": "Document",
-              "DocumentIndex": 1,
-              "Title": "IReservationService.cs",
-              "DocumentMoniker": "C:\\Users\\napoleQuang\\Downloads\\web\\BackEnd\\BackEnd\\Services\\Interfaces\\IReservationService.cs",
-              "RelativeDocumentMoniker": "BackEnd\\Services\\Interfaces\\IReservationService.cs",
-              "ToolTip": "C:\\Users\\napoleQuang\\Downloads\\web\\BackEnd\\BackEnd\\Services\\Interfaces\\IReservationService.cs",
-              "RelativeToolTip": "BackEnd\\Services\\Interfaces\\IReservationService.cs",
-              "ViewState": "AQIAAAoAAAAAAAAAAAA5wBMAAAATAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-04-04T13:02:23.771Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 2,
-              "Title": "ReservationService.cs",
-              "DocumentMoniker": "C:\\Users\\napoleQuang\\Downloads\\web\\BackEnd\\BackEnd\\Services\\Implements\\ReservationService.cs",
-              "RelativeDocumentMoniker": "BackEnd\\Services\\Implements\\ReservationService.cs",
-              "ToolTip": "C:\\Users\\napoleQuang\\Downloads\\web\\BackEnd\\BackEnd\\Services\\Implements\\ReservationService.cs",
-              "RelativeToolTip": "BackEnd\\Services\\Implements\\ReservationService.cs",
-              "ViewState": "AQIAAHgBAAAAAAAAAAAmwIMBAAAgAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-04-04T12:44:05.283Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 0,
-              "Title": "ReservationController.cs",
-              "DocumentMoniker": "C:\\Users\\napoleQuang\\Downloads\\web\\BackEnd\\BackEnd\\Controllers\\ReservationController.cs",
-              "RelativeDocumentMoniker": "BackEnd\\Controllers\\ReservationController.cs",
-              "ToolTip": "C:\\Users\\napoleQuang\\Downloads\\web\\BackEnd\\BackEnd\\Controllers\\ReservationController.cs",
-              "RelativeToolTip": "BackEnd\\Controllers\\ReservationController.cs",
-              "ViewState": "AQIAAD8AAAAAAAAAAAAowB8AAAAJAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-04-04T12:43:58.627Z",
-              "EditorCaption": ""
-            }
-          ]
-        }
-      ]
+      "DocumentGroups": []
     }
   ]
 }

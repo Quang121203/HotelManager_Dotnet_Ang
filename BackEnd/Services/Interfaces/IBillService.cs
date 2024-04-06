@@ -4,12 +4,12 @@ namespace BackEnd.Services.Interfaces
 {
     public interface IBillService
     {
-        Task<List<Bill>> GetAllBill();
-        Task<List<Bill>> GetBillByGuestID(string id);
+        Task<object> GetAllBill();
+        Task<object> GetBillByGuestID(string id);
 
         Task<List<Bill>> GetBillsByStatus(bool status);
-        Task<bool> CreateBill(Bill model);
-        Task<bool> UpdateBill(Bill model);
+        Task<object> CreateBill(Bill model);
+        Task<object> UpdateBill(Bill model);
         Task<bool> DeleteAllBills();
     }
 }

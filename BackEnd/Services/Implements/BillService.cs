@@ -12,12 +12,17 @@ namespace BackEnd.Services.Implements
         {
             this.unitOfWork = unitOfWork;
         }
-        public async Task<bool> CreateBill(Bill model)
+        public async Task<object> CreateBill(Bill model)
         {
             Guest guest = await this.unitOfWork.GuestRepository.GetSingleAsync(model.IDGuest);
             if (guest == null)
             {
-                return false;
+                return new
+                {
+                    EC = 1,
+                    EM = "Guest not found",
+                    DT = "",
+                };
             }
             Bill bill = new Bill{
                 Sum = model.Sum,
@@ -28,7 +33,12 @@ namespace BackEnd.Services.Implements
 
             await this.unitOfWork.BillRepository.InsertAsync(bill);
             await this.unitOfWork.SaveChangesAsync();
-            return true;
+            return new
+            {
+                EC = 0,
+                EM = "Bill has been create",
+                DT = bill,
+            };
         }
 
         public async Task<bool> DeleteAllBills()
@@ -44,14 +54,26 @@ namespace BackEnd.Services.Implements
             return true;
         }
 
-        public async Task<List<Bill>> GetAllBill()
+        public async Task<object> GetAllBill()
         {
-            return await this.unitOfWork.BillRepository.GetAsync();
+            List<Bill> bills= await this.unitOfWork.BillRepository.GetAsync();
+            return new
+            {
+                EC = 0,
+                EM = "",
+                DT = bills,
+            };
         }
 
-        public async Task<List<Bill>> GetBillByGuestID(string id)
+        public async Task<object> GetBillByGuestID(string id)
         {
-            return await this.unitOfWork.BillRepository.GetAsync(d => d.IDGuest == id);
+            List<Bill> bills= await this.unitOfWork.BillRepository.GetAsync(d => d.IDGuest == id);
+            return new
+            {
+                EC = 0,
+                EM = "",
+                DT = bills,
+            };
         }
 
         public async Task<List<Bill>> GetBillsByStatus(bool status)
@@ -59,20 +81,30 @@ namespace BackEnd.Services.Implements
             return await this.unitOfWork.BillRepository.GetAsync(d => d.Status == status);
         }
 
-        public async Task<bool> UpdateBill(Bill model)
+        public async Task<object> UpdateBill(Bill model)
         {
             var bill = await this.unitOfWork.BillRepository.GetSingleAsync(model.ID);
 
             if (bill == null)
             {
-                throw new Exception("Bill not found");
+                return new
+                {
+                    EC = 1,
+                    EM = "Bill not found",
+                    DT = "",
+                };
             }
 
 
             var guest = await this.unitOfWork.GuestRepository.GetSingleAsync(model.IDGuest);
             if (guest == null)
             {
-                return false;
+                return new
+                {
+                    EC = 1,
+                    EM = "Guest not found",
+                    DT = "",
+                };
             }
 
             bill.Sum = model.Sum;
@@ -82,7 +114,12 @@ namespace BackEnd.Services.Implements
             this.unitOfWork.BillRepository.Update(bill);
             await this.unitOfWork.SaveChangesAsync();
 
-            return true;
+            return new
+            {
+                EC = 0,
+                EM = "Bill has been update",
+                DT = "",
+            };
         }
     }
 }

@@ -4,10 +4,10 @@ namespace BackEnd.Services.Interfaces
 {
     public interface IReservationRoomService
     {
-        Task<List<ReservationRoom>> GetAllReservationRoom();
+        Task<object> GetAllReservationRoom();
         Task<ReservationRoom> GetReservationRoomByRoomID(string ID);
-        Task<List<ReservationRoom>> GetAllReservationRoomByReservationID(string ID);
-        Task<bool> CreateReservationRoom(ReservationRoom model);
-        Task<bool> DeleteAllReservationRoom();
+        Task<object> GetAllReservationRoomByReservationID(string ID);
+        Task<object> CreateReservationRoom(ReservationRoom model);
+        Task<object> DeleteAllReservationRoom();
     }
 }
