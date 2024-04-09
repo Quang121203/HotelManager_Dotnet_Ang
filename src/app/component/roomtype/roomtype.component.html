@@ -3,7 +3,7 @@
         <i class="fa-solid fa-magnifying-glass"></i>
         <input class="header-search" type="search" name="" placeholder="Nhập tên loại phòng cần tìm">
     </div>
-    <button type="button" class="header-find" >
+    <button type="button" class="header-find" (click)="openAddDialog()">
       Thêm loại phòng
     </button>
 </div>
@@ -13,7 +13,6 @@
         <thead>
           <tr>
             <th scope="col">Tên loại phòng</th>
-            <th scope="col">Diện tích (m2)</th>
             <th scope="col">Mô tả</th>
             <th scope="col">Giá ngày</th>
             <th scope="col">Sửa</th>
@@ -21,13 +20,12 @@
           </tr>
         </thead>
         <tbody>
-          <tr >
-            <td>name</td>
-            <td>areaInSquareMeters</td>
-            <td>description</td>
-            <td>dailyPrice</td>
-            <td><i class="fa-solid fa-pen-to-square" ></i></td>
-            <td><i class="fa-solid fa-trash-can" ></i></td>
+          <tr *ngFor="let roomType of roomTypes">
+            <td>{{roomType.name}}</td>          
+            <td>{{roomType.description}}</td>
+            <td>{{roomType.dailyPrice}}</td>
+            <td (click)="openUpdateDialog(roomType)"><i class="fa-solid fa-pen-to-square" ></i></td>
+            <td (click)="deleteRoomType(roomType.roomTypeID)"><i class="fa-solid fa-trash-can" ></i></td>
           </tr>
         </tbody>
       </table>

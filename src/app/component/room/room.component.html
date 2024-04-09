@@ -1,32 +1,32 @@
 <div class="header-room">
-    <div class="wrap-search">
-        <i class="fa-solid fa-magnifying-glass"></i>
-        <input class="header-search" type="search" name="" placeholder="Nhập số phòng cần tìm" >
-    </div>
-    <button type="button" class="header-find" >
-      Thêm phòng
-    </button>
+  <div class="wrap-search">
+    <i class="fa-solid fa-magnifying-glass"></i>
+    <input class="header-search" type="search" name="" placeholder="Nhập số phòng cần tìm">
+  </div>
+  <button type="button" class="header-find" (click)="openAddDialog()">
+    Thêm phòng
+  </button>
 </div>
 
 <div class="table-room">
-    <table class="table">
-        <thead>
-          <tr>
-            <th scope="col">Số phòng</th>
-            <th scope="col">Tình trạng</th>
-            <th scope="col">Loại phòng</th>
-            <th scope="col">Sửa</th>
-            <th scope="col">Xóa</th>
-          </tr>
-        </thead>
-        <tbody>
-          <tr >
-            <td>roomNumber</td>
-            <td>isAvailable</td>
-            <td>roomType!.name</td>
-            <td><i class="fa-solid fa-pen-to-square" ></i></td>
-            <td><i class="fa-solid fa-trash-can" ></i></td>
-          </tr>
-        </tbody>
-      </table>
+  <table class="table">
+    <thead>
+      <tr>
+        <th scope="col">Số phòng</th>
+        <th scope="col">Tình trạng</th>
+        <th scope="col">Loại phòng</th>
+        <th scope="col">Sửa</th>
+        <th scope="col">Xóa</th>
+      </tr>
+    </thead>
+    <tbody *ngFor="let room of rooms">
+      <tr>
+        <td>{{room.roomNumber}}</td>
+        <td>{{room.isAvaiable?"Occupied":"Departureroom"}}</td>
+        <td>{{room.roomTypeName}}</td>
+        <td (click)="openUpdateDialog(room)"><i class="fa-solid fa-pen-to-square"></i></td>
+        <td (click)="deleteRoom(room.roomID)"><i class="fa-solid fa-trash-can"></i></td>
+      </tr>
+    </tbody>
+  </table>
 </div>

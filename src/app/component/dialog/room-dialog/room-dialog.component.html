@@ -1,0 +1,28 @@
+<div class="container my-2">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h4 class="modal-title">{{this.data.type=="update"?"Update Room": "Add Room"}}</h4>
+        <button type="button" class="close" (click)="closeDialog()">&times;</button>
+      </div>
+      <div class="modal-body">
+        <form [formGroup]="roomForm" >
+          <div class="form-group py-2">
+            <label for="roomNumber"><i class="fa-solid fa-house"></i> Số Phòng:</label>
+            <input type="text" class="form-control" id="roomNumber" placeholder="Nhập số phòng"  formControlName="roomNumber">
+          </div>
+          <div class="form-group py-2">
+            <label for="roomType"><i class="fa-solid fa-layer-group"></i> Loại phòng:</label>
+            <select class="form-control" id="roomType" style="color: #7d7d7d;"  formControlName="roomTypeID">
+              <option *ngFor="let roomtype of roomTypes" [value]="roomtype.roomTypeID">{{roomtype.name}}</option>
+            </select>
+          </div>
+          <div class="text-center py-2">
+            <button type="button" class="btn btn-secondary col-3 mx-2" (click)="closeDialog()">Hủy bỏ</button>
+            <button type="button" class="btn btn-primary col-3" (click)="onSubmit()">Lưu</button>
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+</div>

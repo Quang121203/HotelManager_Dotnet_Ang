@@ -1,0 +1,34 @@
+<div class="container my-2">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h4 class="modal-title">{{this.data.type=="update"?"Update RoomType": "Add RoomType"}}</h4>
+          <button type="button" class="close" (click)="closeDialog()">&times;</button>
+        </div>
+        <div class="modal-body">
+          <form [formGroup]="roomTypeForm" >
+            <div class="form-group py-2">
+              <label for="roomNumber"><i class="fa-solid fa-house"></i>Name:</label>
+              <input type="text" class="form-control" id="roomNumber" placeholder="Nhập tên"  formControlName="name">
+            </div>
+
+            <div class="form-group py-2">
+              <label for="roomNumber"><i class="fa-solid fa-house"></i>Description:</label>
+              <input type="text" class="form-control" id="roomNumber" placeholder="Nhập mô tả"  formControlName="description">
+            </div>
+
+            <div class="form-group py-2">
+              <label for="roomNumber"><i class="fa-solid fa-house"></i>Price:</label>
+              <input type="text" class="form-control" id="roomNumber" placeholder="Nhập gía"  formControlName="dailyPrice" type="number" min="0" onkeypress="return event.charCode >= 48">
+            </div>
+            
+            <div class="text-center py-2">
+              <button type="button" class="btn btn-secondary col-3 mx-2" (click)="closeDialog()">Hủy bỏ</button>
+              <button type="button" class="btn btn-primary col-3" (click)="onSubmit()">Lưu</button>
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+  

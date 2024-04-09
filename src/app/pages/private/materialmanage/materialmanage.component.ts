@@ -6,7 +6,5 @@ import { Component } from '@angular/core';
   styleUrls: ['./materialmanage.component.css']
 })
 export class MaterialmanageComponent {
-  ngOnInit() {
-    console.log("test");
-  }
+  
 }
