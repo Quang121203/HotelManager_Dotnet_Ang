@@ -14,6 +14,7 @@ class Room {
     guest?: Guest ;
     reservation?: Reservation ;
     diffDays:number=0;
+    isReserved:boolean=false;
 }
 
 class RoomType {
@@ -41,6 +42,7 @@ class Reservation {
     isConfirmed: boolean = false;
     confirmationTime: string = "";
     dateCreated: string = "";
+    guest?: Guest;
 }
 
 class ReservationRoom {

@@ -1,0 +1,15 @@
+.phong{
+    min-height: 70px;
+    font-size: 18px;
+    font-weight: 600;
+    background: aqua;
+    border-radius: 15px ;
+    cursor: pointer;
+}
+.phong.selected{
+    background: gold;
+}
+
+#soluongphong{
+    display: none;
+}

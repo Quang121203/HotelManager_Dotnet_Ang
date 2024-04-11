@@ -22,6 +22,17 @@ export class ReservationService {
     const url = `${this.url}Reservation/CheckOut?IDReservation=${id}`
     return this.http.get<Response>(url)
   }
+
+  checkIn(id:string):Observable<Response>{
+    const url = `${this.url}Reservation/CheckIn?IDReservation=${id}`;
+    return this.http.get<Response>(url)
+  }
  
+  getAllReservation():Observable<Response> {
+    const url = `${this.url}Reservation/GetAllReservations`;
+    return this.http.get<Response>(url)
+  }
+
+  
 
 }

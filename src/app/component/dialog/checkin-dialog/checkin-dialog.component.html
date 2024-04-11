@@ -1,0 +1,70 @@
+<div class="container">
+    <div class="modal-header">
+      <h1 mat-dialog-title>Check-in</h1>
+      <button type="button" class="btn-close" (click)="onNoClick()"></button>
+    </div>
+    <mat-stepper [linear]="true" #stepper>
+      <mat-step>
+        <ng-template matStepLabel>Chọn phòng</ng-template>
+  
+        <div class="modal-header">
+  
+          <label>Số lượng phòng: {{number}}</label>
+          <button mat-button matStepperNext>Next</button>
+        </div>
+  
+        <div class="container mt-5">
+          <div class="row">
+            <div *ngFor="let item of roomsByRoomType">
+              <div class="title my-3">{{item.roomType.name}}</div>
+              <div class="row">
+  
+                <div *ngFor="let room of item.rooms" class="col-2 p-1 mb-4">
+                  <div [ngClass]="{'phong text-center p-1':true,selected:room.isReserved}">
+                    <p>{{room.roomNumber}}</p>
+                  </div>
+                </div>
+  
+              </div>
+            </div>
+          </div>
+        </div>
+  
+      </mat-step>
+
+      <!-- ====================================================================== -->
+      <mat-step>
+        <ng-template matStepLabel>Xác thực thông tin</ng-template>
+        
+          <div class="modal-header">
+            <button mat-button matStepperPrevious class="my-2">Back</button>
+            <button mat-button matStepperNext>Next</button>
+          </div>
+          <div class="mb-3">
+            <label for="name" class="form-label">Tên</label>
+            <input type="text" class="form-control" value="{{guest.fullName}}" disabled >
+          </div>
+          <div class="mb-3">
+            <label for="cccd" class="form-label">Email</label>
+            <input type="text" class="form-control" value="{{guest.email}}" disabled>
+          </div>
+          <div class="mb-3">
+            <label for="phone" class="form-label">Số điện thoại</label>
+            <input type="text" class="form-control"  value="{{guest.phoneNumber}}" disabled>
+          </div>
+          
+        
+      </mat-step>
+      <!-- ======================================================================= -->
+      
+      <mat-step>
+        <ng-template matStepLabel>Hoàn thành</ng-template>
+        <p>Xác nhận check-in</p>
+        <div>
+          <button mat-button (click)="checkIn()">Check-in</button>
+        </div>
+      </mat-step>
+
+
+    </mat-stepper>
+  </div>

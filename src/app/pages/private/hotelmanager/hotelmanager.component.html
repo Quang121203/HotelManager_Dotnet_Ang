@@ -1,9 +1,9 @@
-<mat-tab-group mat-stretch-tabs="false" mat-align-tabs="start">
+<mat-tab-group mat-stretch-tabs="false" mat-align-tabs="start" (selectedIndexChange)="tabChanged($event)">
     <mat-tab label="Manage">
-        <app-manageroom></app-manageroom>
+        <app-manageroom #manageTab></app-manageroom>
     </mat-tab>
 
     <mat-tab label="Check - in">
-        <app-bookroom></app-bookroom>
+        <app-bookroom #checkinTab></app-bookroom>
     </mat-tab>
 </mat-tab-group>

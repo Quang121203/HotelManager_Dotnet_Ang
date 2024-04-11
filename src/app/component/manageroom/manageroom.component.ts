@@ -33,7 +33,6 @@ export class ManageroomComponent {
 
     dialogRef.afterClosed().subscribe(result => {
       this.ngOnInit();
-      console.log("test");
     });
   }
 

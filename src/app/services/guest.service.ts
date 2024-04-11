@@ -18,7 +18,7 @@ export class GuestService {
   }
 
   getGuestById(id: string):Observable<Response>{
-    let api = `${this.url}Guest/${id}`
+    let api = `${this.url}Guest/GetGuest/${id}`
     return this.http.get<Response>(api)
   }
 }

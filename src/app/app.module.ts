@@ -13,13 +13,15 @@ import { SidebarComponent } from './component/sidebar/sidebar.component';
 import { FooterComponent } from './component/footer/footer.component';
 import { HttpClientModule } from '@angular/common/http';
 import { RoomDialogComponent } from './component/dialog/room-dialog/room-dialog.component';
-import {MatDialogModule} from '@angular/material/dialog';
-import {MatSnackBarModule} from '@angular/material/snack-bar';
+import { MatDialogModule } from '@angular/material/dialog';
+import { MatSnackBarModule } from '@angular/material/snack-bar';
 import { ReactiveFormsModule } from '@angular/forms';
 import { RoomTypeDialogComponent } from './component/dialog/room-type-dialog/room-type-dialog.component';
 import { InfomationRoomDialogComponent } from './component/dialog/infomation-room-dialog/infomation-room-dialog.component';
-import {MatIconModule} from '@angular/material/icon';
+import { MatIconModule } from '@angular/material/icon';
 import { BillDialogComponent } from './component/dialog/bill-dialog/bill-dialog.component';
+import { CheckinDialogComponent } from './component/dialog/checkin-dialog/checkin-dialog.component';
+import { MatStepperModule } from "@angular/material/stepper";
 
 @NgModule({
   declarations: [
@@ -32,7 +34,8 @@ import { BillDialogComponent } from './component/dialog/bill-dialog/bill-dialog.
     RoomDialogComponent,
     RoomTypeDialogComponent,
     InfomationRoomDialogComponent,
-    BillDialogComponent
+    BillDialogComponent,
+    CheckinDialogComponent
   ],
   imports: [
     BrowserModule,
@@ -42,7 +45,8 @@ import { BillDialogComponent } from './component/dialog/bill-dialog/bill-dialog.
     MatDialogModule,
     ReactiveFormsModule,
     MatSnackBarModule,
-    MatIconModule
+    MatIconModule,
+    MatStepperModule,
   ],
   providers: [],
   bootstrap: [AppComponent]
