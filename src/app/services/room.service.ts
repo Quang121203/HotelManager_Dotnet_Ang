@@ -17,6 +17,11 @@ export class RoomService{
     return this.http.get<Response>(api); 
   }
 
+  getRoomByRoomTypeID(id:string): Observable<Response> {
+    let api = `${this.url}Room/GetRoomByRoomTypeId?roomTypeId=${id}`;
+    return this.http.get<Response>(api); 
+  }
+
   updateRoom(room: Room): Observable<Response> {
     let api = `${this.url}Room/UpdateRoom`;
     return this.http.put<Response>(api,room); 
@@ -30,6 +35,11 @@ export class RoomService{
   deleteRoom(id: string): Observable<Response> {
     let api = `${this.url}Room/DeleteRoom/${id}`;
     return this.http.delete<Response>(api); 
+  }
+
+  getRoomById(id:string):Observable<Response>{
+    let api = `${this.url}Room/GetRoom/${id}`;
+    return this.http.get<Response>(api);
   }
 
 }

@@ -6,6 +6,7 @@ import { MatTabsModule } from '@angular/material/tabs';
 import {MatIconModule} from '@angular/material/icon';
 import { BookroomComponent } from 'src/app/component/bookroom/bookroom.component';
 import { ManageroomComponent } from 'src/app/component/manageroom/manageroom.component';
+import { FormsModule } from '@angular/forms';
 
 
 @NgModule({
@@ -19,6 +20,7 @@ import { ManageroomComponent } from 'src/app/component/manageroom/manageroom.com
     HotelmanagerRoutingModule,
     MatTabsModule,
     MatIconModule,
+    FormsModule
   ]
 })
 export class HotelmanagerModule { }

@@ -6,19 +6,19 @@
             <div class="col-10">
                 <div class="row h-100">
                     <div class="form-check col-4 my-auto">
-                        <input class="form-check-input" type="radio" name="trangthaiphong" value="available">
+                        <input class="form-check-input" type="radio" name="trangthaiphong" value="available" [(ngModel)] = "check" (ngModelChange)="change()">
                         <label class="form-check-label" for="flexRadioDefault1">
                             Phòng trống
                         </label>
                     </div>
                     <div class="form-check col-4 my-auto">
-                        <input class="form-check-input" type="radio" name="trangthaiphong" value="unavailable">
+                        <input class="form-check-input" type="radio" name="trangthaiphong" value="unavailable" [(ngModel)] = "check" (ngModelChange)="change()">
                         <label class="form-check-label" for="flexRadioDefault1">
                             Phòng đang thuê
                         </label>
                     </div>
                     <div class="form-check col-4 my-auto">
-                        <input class="form-check-input" type="radio" name="trangthaiphong" value="all">
+                        <input class="form-check-input" type="radio" name="trangthaiphong" value="all" [(ngModel)] = "check" (ngModelChange)="change()">
                         <label class="form-check-label" for="flexRadioDefault1">
                             Tất cả phòng
                         </label>
@@ -29,16 +29,17 @@
     </div>
 
     <div class="container-fluid p-3">
-        <div>
-            <div class="title my-3">item.roomType.name</div>
+        <div *ngFor="let item of roomsByRoomType">
+            <div class="title my-3">{{item.roomType.name}}</div>
             <div class="row">
-                <h1>Không có phòng</h1>
-                <button style="border: none;" class=" btn col-lg-3 col-md-4 col-sm-6 p-2">
+                <h1 *ngIf="!item.rooms.length">Không có phòng</h1>
+                <button *ngFor="let room of item.rooms" style="border: none;"
+                    class=" btn col-lg-3 col-md-4 col-sm-6 p-2" [disabled]="room.isAvaiable" (click)="openRoomDialog(room)">
                     <div class="cards__item">
-                        <div class="card trong">
+                        <div [className]="room.isAvaiable?'card trong':'card dadat'">
                             <div class="p-0 card__status">
                                 <div class="row m-0">
-                                    <div class="col-6 text-start fw-bold">room.roomNumber</div>
+                                    <div class="col-6 text-start fw-bold">{{room.roomNumber}}</div>
                                     <div class="col-6 text-end status1">Phòng đã đặt</div>
                                     <div class="col-6 text-end status2">Phòng trống</div>
                                 </div>
@@ -47,8 +48,7 @@
                                             aria-label="Example home icon" fontIcon="person"></mat-icon></div>
                                     <div class="col-3 p-0 icon2"><mat-icon aria-hidden="false" class="icon-size"
                                             aria-label="Example home icon" fontIcon="check_circle"></mat-icon></div>
-                                    <div class="col-9 my-auto fs-5 text-center fw-bold">room.isAvaiable?'Phòng
-                                        trống':room.guest.fullName</div>
+                                    <div class="col-9 my-auto fs-5 text-center fw-bold">{{room.isAvaiable?'Phòng trống':room.guest?.fullName}}</div>
                                 </div>
                             </div>
                             <div class="card__content">
@@ -56,12 +56,7 @@
                                     <div class="col-6 cangiua">
                                         <mat-icon aria-hidden="false" aria-label="Example home icon"
                                             fontIcon="calendar_month"></mat-icon>
-                                        <span>room.isAvaiable?"0 ngày": room.diffDays+ " ngày"</span>
-                                    </div>
-                                    <div class="col-6 cangiua text-end">
-                                        <mat-icon aria-hidden="false" aria-label="Example home icon"
-                                            fontIcon="done"></mat-icon>
-                                        <span>Đã dọn dẹp</span>
+                                        <span>{{room.isAvaiable?"0 ngày": room.diffDays+ " ngày"}}</span>
                                     </div>
                                 </div>
 
@@ -73,51 +68,6 @@
             </div>
         </div>
 
-        <div>
-            <div class="title my-3">item.roomType.name</div>
-            <div class="row">
-                <h1>Không có phòng</h1>
-                <button style="border: none;" class=" btn col-lg-3 col-md-4 col-sm-6 p-2">
-                    <div class="cards__item">
-                        <div class="card dadat">
-                            <div class="p-0 card__status">
-                                <div class="row m-0">
-                                    <div class="col-6 text-start fw-bold">room.roomNumber</div>
-                                    <div class="col-6 text-end status1">Phòng đã đặt</div>
-                                    <div class="col-6 text-end status2">Phòng trống</div>
-                                </div>
-                                <div class="row m-0 pt-3">
-                                    <div class="col-3 p-0 icon1"><mat-icon aria-hidden="false" class="icon-size"
-                                            aria-label="Example home icon" fontIcon="person"></mat-icon></div>
-                                    <div class="col-3 p-0 icon2"><mat-icon aria-hidden="false" class="icon-size"
-                                            aria-label="Example home icon" fontIcon="check_circle"></mat-icon></div>
-                                    <div class="col-9 my-auto fs-5 text-center fw-bold">room.isAvaiable?'Phòng
-                                        trống':room.guest.fullName</div>
-                                </div>
-                            </div>
-                            <div class="card__content">
-                                <div class="row">
-                                    <div class="col-6 cangiua">
-                                        <mat-icon aria-hidden="false" aria-label="Example home icon"
-                                            fontIcon="calendar_month"></mat-icon>
-                                        <span>room.isAvaiable?"0 ngày": room.diffDays+ " ngày"</span>
-                                    </div>
-                                    <div class="col-6 cangiua text-end">
-                                        <mat-icon aria-hidden="false" aria-label="Example home icon"
-                                            fontIcon="done"></mat-icon>
-                                        <span>Đã dọn dẹp</span>
-                                    </div>
-                                </div>
-
-                            </div>
-                        </div>
-
-                    </div>
-                </button>
-
-               
-            </div>
-        </div>
 
     </div>
 </div>

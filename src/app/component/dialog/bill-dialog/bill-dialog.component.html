@@ -1,0 +1,62 @@
+<div class="p-3">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <button style="z-index: 100;" type="button" class="btn-close"  aria-label="Close" (click)="closeDialog()"></button>
+            <div style="background-color: #fff;" class="modal-body">
+                <div class="header-bill">
+                    <div class="logo-bill">NEXUS HOTEL</div>
+                    <div class="title-bill">Hóa đơn</div>
+                    <div>
+                        <i class="fa-solid fa-print"></i>
+                    </div>
+                </div>
+                <div class="body-bill">
+                    <span class="name-customer">{{this.data.room.guest?.fullName}}</span>
+                    <div class="row">
+                        <div class="col col-lg-6">
+                            <div>Ngày lập hóa đơn: {{date}}</div>
+                            <div>Số hóa đơn: {{this.data.bill.id}}</div>
+                        </div>
+                        <div class="col col-lg-6">
+                            <!-- <div>Nhân viên: {{inputdata.userName}}</div> -->
+                            <div>Số ngày: {{this.data.room.diffDays}}</div>
+                        </div>
+                    </div>
+                    <table style="margin-top: 15px;" class="table">
+                        <thead>
+                            <tr>
+
+                                <th scope="col">Dịch vụ</th>
+                                <th scope="col">Giá tiền</th>
+                                <th scope="col">Số lượng</th>
+                                <th scope="col">Thành tiền</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr *ngFor="let i of this.data.guestRoom">
+                                <td>{{i.name}}</td>
+                                <td>{{i.price}}</td>
+                                <td>{{i.number}}</td>
+                                <td>{{i.priceTotal}}</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                    <div class="total">
+                        <span>Tổng tiền: <span class="total-value">{{this.data.bill.sum}}</span></span>
+                    </div>
+                    <div class="footer-bill">
+                        <div class="mess">Cảm ơn quý khách!</div>
+                        <div class="contact">
+                            <span class="email">nexushotel123@gmail.com</span>
+                            <span style="margin-left: 12px;" class="phone">0123456789</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary me-2" (click)="closeDialog()">Thoát</button>
+                <button type="button" class="btn btn-primary" (click)="checkOut()">Xuất hóa đơn</button>
+            </div>
+        </div>
+    </div>
+</div>

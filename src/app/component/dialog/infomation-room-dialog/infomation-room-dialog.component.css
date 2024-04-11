@@ -1,0 +1,4 @@
+@import url(../../../pages/private/hotelmanager/hotelmanager.component.css);
+.form-control{
+    padding: 0.2rem 0.75rem;
+}

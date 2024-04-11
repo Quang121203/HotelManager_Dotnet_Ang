@@ -17,6 +17,9 @@ import {MatDialogModule} from '@angular/material/dialog';
 import {MatSnackBarModule} from '@angular/material/snack-bar';
 import { ReactiveFormsModule } from '@angular/forms';
 import { RoomTypeDialogComponent } from './component/dialog/room-type-dialog/room-type-dialog.component';
+import { InfomationRoomDialogComponent } from './component/dialog/infomation-room-dialog/infomation-room-dialog.component';
+import {MatIconModule} from '@angular/material/icon';
+import { BillDialogComponent } from './component/dialog/bill-dialog/bill-dialog.component';
 
 @NgModule({
   declarations: [
@@ -27,7 +30,9 @@ import { RoomTypeDialogComponent } from './component/dialog/room-type-dialog/roo
     SidebarComponent,
     FooterComponent,
     RoomDialogComponent,
-    RoomTypeDialogComponent
+    RoomTypeDialogComponent,
+    InfomationRoomDialogComponent,
+    BillDialogComponent
   ],
   imports: [
     BrowserModule,
@@ -36,7 +41,8 @@ import { RoomTypeDialogComponent } from './component/dialog/room-type-dialog/roo
     HttpClientModule,
     MatDialogModule,
     ReactiveFormsModule,
-    MatSnackBarModule
+    MatSnackBarModule,
+    MatIconModule
   ],
   providers: [],
   bootstrap: [AppComponent]

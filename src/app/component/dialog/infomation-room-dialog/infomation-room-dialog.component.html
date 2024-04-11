@@ -1,0 +1,38 @@
+<!-- Modal xem phòng-->
+<div class="p-3">
+    <div class="">
+        <div class="modal-content">
+            <button type="button" class="btn-close" aria-label="Close" (click)="closeDialog()"></button>
+            <div class="modal-header">
+                <h2>{{this.data.roomNumber}}</h2>   
+            </div>
+            <div class="modal-body">
+                <div class="container-fluid bg-light p-3">
+                    <div class="row">
+                        <div class="col-4 cangiua">
+                            <mat-icon aria-hidden="false" aria-label="Example home icon" fontIcon="person"></mat-icon>
+                            <span>{{this.data.guest?.fullName}}</span>
+                        </div>
+                        <div class="col-4 cangiua">
+                            <mat-icon aria-hidden="false" aria-label="Example home icon"
+                                fontIcon="calendar_month"></mat-icon>
+                            <span>{{this.data.reservation && this.data.reservation.startTime.slice(0,10)}}</span>
+                        </div>
+                        <div class="col-4 cangiua">
+                            <mat-icon aria-hidden="false" aria-label="Example home icon" fontIcon="today"></mat-icon>
+                            <span>{{this.data.diffDays+ " ngày"}}</span>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-primary ms-3" (click)="openBillDialog()">
+                    Thanh toán
+                </button>
+                <button type="button" class="btn btn-secondary ms-3" (click)="closeDialog()">Thoát</button>
+            </div>
+        </div>
+    </div>
+</div>
+
