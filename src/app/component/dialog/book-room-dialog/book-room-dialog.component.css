@@ -1,0 +1,10 @@
+#table th,td{
+    border-top: 1px solid #dee2e6;
+    padding: 10px 30px;
+
+}
+
+
+#table th ,td{
+    text-align: center;
+}

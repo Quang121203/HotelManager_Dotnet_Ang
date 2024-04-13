@@ -22,6 +22,11 @@ import { MatIconModule } from '@angular/material/icon';
 import { BillDialogComponent } from './component/dialog/bill-dialog/bill-dialog.component';
 import { CheckinDialogComponent } from './component/dialog/checkin-dialog/checkin-dialog.component';
 import { MatStepperModule } from "@angular/material/stepper";
+import { BookRoomDialogComponent } from './component/dialog/book-room-dialog/book-room-dialog.component';
+import { FormsModule } from '@angular/forms';
+
+
+
 
 @NgModule({
   declarations: [
@@ -35,7 +40,9 @@ import { MatStepperModule } from "@angular/material/stepper";
     RoomTypeDialogComponent,
     InfomationRoomDialogComponent,
     BillDialogComponent,
-    CheckinDialogComponent
+    CheckinDialogComponent,
+    BookRoomDialogComponent,
+ 
   ],
   imports: [
     BrowserModule,
@@ -47,6 +54,7 @@ import { MatStepperModule } from "@angular/material/stepper";
     MatSnackBarModule,
     MatIconModule,
     MatStepperModule,
+    FormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]

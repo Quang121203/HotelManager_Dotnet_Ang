@@ -6,6 +6,7 @@ import { Reservation, ReservationRoom, Response } from 'src/app/models';
 import { ReservationRoomService } from 'src/app/services/reservation-room.service';
 import { CheckinDialogComponent } from '../dialog/checkin-dialog/checkin-dialog.component';
 import { GuestService } from 'src/app/services/guest.service';
+import { BookRoomDialogComponent } from '../dialog/book-room-dialog/book-room-dialog.component';
 
 @Component({
   selector: 'app-bookroom',
@@ -64,18 +65,16 @@ export class BookroomComponent {
   }
 
 
-  // openDialogBook(): void {
-  //   const dialogRef = this.dialog.open(ModalBookingComponent, {
-  //     width: '80%',
-  //     height: '90%',
-  //     data: { /* Thêm dữ liệu nếu cần thiết */ }
-  //   });
+  openDialogBook(){
+    const dialogRef = this.dialog.open(BookRoomDialogComponent, {
+      width: '80%',
+      height: '90%',
+    });
 
-  //   dialogRef.afterClosed().subscribe(result => {
-  //     this.reservationsWithNumber = [];
-  //     this.ngOnInit();
-  //   });
-  // }
+    dialogRef.afterClosed().subscribe(result => {
+      this.ngOnInit();
+    });
+  }
 
   // Cancel(id: string) {
   //   this.reservationService.Cancel(id).subscribe((result: any) => {

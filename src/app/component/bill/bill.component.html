@@ -1,0 +1,38 @@
+<div class="container mt-5">
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-4">
+                Từ: <input name="d1" type="date" [(ngModel)] = "dateStart">
+            </div>
+            <div class="col-4">
+                Đến: <input name="d2" type="date" [(ngModel)] = "dateEnd">
+            </div>
+            <div class="col-4">
+                <button class="btn btn-primary my-auto" type="submit" (click)="onSubmit()">Submit</button>
+            </div>
+        </div>
+        <div class="row mt-3">
+            <table class="table">
+                <thead>
+                    <tr>
+                        <th scope="col">Mã hóa đơn</th>
+                        <th scope="col">Tổng tiền</th>
+                        <th scope="col">Ngày</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr *ngFor="let b of bills">
+                        <th scope="row">{{b.id}}</th>
+                        <td>{{b.sum}}</td>
+                        <td>{{b.dateCreated.slice(0,10)}}</td>
+                    </tr>
+                    <tr *ngIf="bills.length > 0">
+                        <th scope="row">Tổng tiền</th>
+                        <td>{{sum}}</td>
+                        <td></td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>

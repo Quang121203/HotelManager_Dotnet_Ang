@@ -11,10 +11,10 @@ class Room {
     roomTypeName: string = "";
     dateCreated: string = "";
     isAvaiable: boolean = true;
-    guest?: Guest ;
-    reservation?: Reservation ;
-    diffDays:number=0;
-    isReserved:boolean=false;
+    guest?: Guest;
+    reservation?: Reservation;
+    diffDays: number = 0;
+    isReserved: boolean = false;
 }
 
 class RoomType {
@@ -50,12 +50,22 @@ class ReservationRoom {
     roomID: string = "";
 }
 
-class Bill{
+class Bill {
     id: string = "";
-    sum: number=0;
-    status:boolean=false;
+    sum: number = 0;
+    status: boolean = false;
     idGuest: string = "";
     dateCreated: string = "";
 }
 
-export { Response, Room, RoomType, Guest,Reservation,ReservationRoom,Bill};
+class Booking {
+    guestFullName: string = "";
+    guestPhoneNumber: string = "";
+    guestEmail: string = "";
+    roomTypeId: string = "";
+    startTime: string = "";
+    endTime: string = "";
+    numberOfRooms: number = 0;
+}
+
+export { Response, Room, RoomType, Guest, Reservation, ReservationRoom, Bill, Booking };

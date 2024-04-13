@@ -1,4 +1,4 @@
-<button type="button" style="margin: 8px 24px;" class="btn btn-primary" >
+<button type="button" style="margin: 8px 24px;" class="btn btn-primary" (click)="openDialogBook()">
     Đặt phòng
 </button>
 <div class="container-fluid" *ngFor="let item of reservationsWithNumber; let i = index">
@@ -12,7 +12,7 @@
             <p>Tên khách hàng {{item.reservation.guest?.fullName}}</p>
         </div>
         <div>
-            <button class="btn btn-danger col-2 mx-2" >Hủy yêu cầu đặt</button>
+            <button class="btn btn-danger col-2 mx-2">Hủy yêu cầu đặt</button>
             <button class="btn btn-primary col-2" (click)="openDialogCheckIn(item.reservation.reservationID,item.reservation.guestID)">Xem</button>
         </div>
     </div>

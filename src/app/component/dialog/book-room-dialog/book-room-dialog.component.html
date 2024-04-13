@@ -1,0 +1,141 @@
+<div class='container pt-3'>
+    <div class="text-center wow fadeInUp" data-wow-delay="0.1s">
+        <h6 class="section-title text-center text-primary text-uppercase">Room
+            Booking</h6>
+        <h1 class="mb-5">
+            Book A <span class="text-primary text-uppercase">Luxury Room</span>
+        </h1>
+    </div>
+    <div class="container-fluid booking pb-5 wow fadeIn" data-wow-delay="0.1s">
+
+        <div class="container">
+            <div class="bg-white shadow" style="padding: 35px;">
+                <div class="row g-2">
+                    <div class="col-md-12">
+                        <div class="row g-2">
+
+                            <div class="col-md-4">
+                                <p>Ngày đến
+                                <p>
+                                <div class="date" id="date1" data-target-input="nearest">
+                                    <input type="date" class="form-control" name="checkin" [(ngModel)]="dateCheckin" />
+                                </div>
+                            </div>
+                            <div class="col-md-4">
+                                <p>Ngày đi
+                                <p>
+                                <div class="date" id="date1" data-target-input="nearest">
+                                    <input type="date" class="form-control" name="checkout"
+                                        [(ngModel)]="dateCheckout" />
+                                </div>
+                            </div>
+                            <div class="col-md-4">
+                                <p>Số người
+                                <p>
+                                <div>
+                                    <input type="number" class="form-control" min="1" value="1" name="people" />
+                                </div>
+                            </div>
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="pt-4 row d-flex ">
+
+            <table id="table" class="col-6">
+                <thead>
+                    <th>Loại phòng</th>
+                    <th>Giá/Đêm</th>
+                    <th>Số lượng phòng</th>
+                </thead>
+                <tbody>
+
+
+                    <tr *ngFor="let roomtype of roomTypes; let i = index">
+                        <td>{{roomtype.name}}</td>
+                        <td>{{roomtype.dailyPrice}}</td>
+                        <td><input type="number" min="0" value="0" class="soluongphong" id="{{roomtype.roomTypeID}}"
+                                name="{{roomtype.name}}"></td>
+                    </tr>
+
+
+                </tbody>
+            </table>
+
+            <div class="g-5 col-6">
+
+                <div class="col-lg-6 float-end">
+                    <div class="wow fadeInUp" data-wow-delay="0.2s">
+                        <form [formGroup]="FormBooking" (ngSubmit)="onSubmit()">
+                            <div class="row g-3">
+                                <div class="col-md-12">
+                                    <div class="form-floating">
+                                        <input formControlName="name"
+                                            [ngClass]="{'is-invalid':submitted && FormBooking.controls['name'].errors}"
+                                            type="text" class="form-control" id="name" placeholder="Nhập họ tên">
+                                        <label for="name">Họ tên <span style="color: red;">*</span></label>
+                                        <div *ngIf="submitted && FormBooking.controls['name'].errors"
+                                            class="text-danger">
+                                            Không được để trống!
+                                        </div>
+
+                                    </div>
+                                </div>
+                                <div class="col-md-12">
+                                    <div class="form-floating">
+                                        <input formControlName="email"
+                                            [ngClass]="{'is-invalid':submitted && FormBooking.controls['email'].errors}"
+                                            type="email" class="form-control" id="email" placeholder="Nhập email">
+                                        <label for="email">Email <span style="color: red;">*</span></label>
+                                        <div *ngIf="submitted && FormBooking.controls['email'].errors?.['required']"
+                                            class="text-danger">
+                                            Không được để trống!
+                                        </div>
+                                        <div *ngIf="submitted && FormBooking.controls['email'].errors?.['email']"
+                                            class="text-danger">
+                                            Sai định đạng
+                                        </div>
+
+                                    </div>
+                                </div>
+
+                                <div class="col-md-12">
+                                    <div class="form-floating">
+                                        <input formControlName="sodienthoai"
+                                            [ngClass]="{'is-invalid':submitted && FormBooking.controls['sodienthoai'].errors}"
+                                            type="number" class="form-control" id="name"
+                                            placeholder="Nhập số điện thoại">
+                                        <label for="name">Số điện thoại <span style="color: red;">*</span></label>
+                                        <div *ngIf="submitted && FormBooking.controls['sodienthoai'].errors?.['required']"
+                                            class="text-danger">
+                                            Không được để trống!
+                                        </div>
+                                        <div *ngIf="submitted && FormBooking.controls['sodienthoai'].errors?.['maxlength']"
+                                            class="text-danger">
+                                            Không được quá 10 số
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-md-12">
+                                    <div class="form-floating">
+                                        <textarea style="height: 180px; resize: none;" formControlName="yeucau"
+                                            type="text" class="form-control" id="name" placeholder="Yêu cầu"></textarea>
+                                        <label for="name">Yêu cầu </label>
+                                    </div>
+                                </div>
+
+                                <div class="col-12">
+                                    <button class="btn btn-primary w-100 py-3" type="submit" id="btn">Book
+                                        Now</button>
+                                </div>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </div>
+</div>

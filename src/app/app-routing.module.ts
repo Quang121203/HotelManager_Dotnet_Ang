@@ -16,6 +16,7 @@ const routes: Routes = [
       { path:'materialmanage',loadChildren: ()=> import('./pages/private/materialmanage/materialmanage.module').then(module=>module.MaterialmanageModule)},
       { path:'table',loadChildren: ()=> import('./pages/private/table/table.module').then(module=>module.TableModule)},
       { path:'hotelmanage',loadChildren: ()=> import('./pages/private/hotelmanager/hotelmanager.module').then(module=>module.HotelmanagerModule)},
+      { path:'report',loadChildren: ()=> import('./pages/private/report/report.module').then(module=>module.ReportModule)},
     ],
   }
 

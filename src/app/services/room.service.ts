@@ -2,7 +2,7 @@ import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import eviroments from '../../eviroments';
 import { Observable } from 'rxjs';
-import { Response,Room } from '../models';
+import { Response,Room,Booking} from '../models';
 
 @Injectable({
   providedIn: 'root'
@@ -40,6 +40,11 @@ export class RoomService{
   getRoomById(id:string):Observable<Response>{
     let api = `${this.url}Room/GetRoom/${id}`;
     return this.http.get<Response>(api);
+  }
+
+  public getRoomNotServe(booking:Booking):Observable<Room[]>{
+    let api = `${this.url}Room/GetRoomNotReser`;
+    return this.http.post<Room[]>(api, booking);
   }
 
 }
