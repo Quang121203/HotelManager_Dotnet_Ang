@@ -17,7 +17,7 @@ namespace BackEnd.Controllers
         }
 
         [HttpGet("[action]")]
-        public async Task<IActionResult> GetAllReservation()
+        public async Task<IActionResult> GetAllReservationRoom()
         {
 
             var response = await this.reservationRoomService.GetAllReservationRoom();
@@ -26,7 +26,7 @@ namespace BackEnd.Controllers
 
 
         [HttpGet("[action]")]
-        public async Task<IActionResult> GetReservationsByReservationID([FromQuery] string id)
+        public async Task<IActionResult> GetReservationRoomByReservationID([FromQuery] string id)
         {
             var response = await this.reservationRoomService.GetAllReservationRoomByReservationID(id);
             return Ok(response);

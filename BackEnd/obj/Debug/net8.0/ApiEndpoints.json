@@ -1,265 +1,73 @@
 [
   {
-    "ContainingType": "BackEnd.Controllers.ReservationController",
-    "Method": "AddReservation",
-    "RelativePath": "api/Reservation",
+    "ContainingType": "BackEnd.Controllers.AuthController",
+    "Method": "Login",
+    "RelativePath": "Auth/Login",
     "HttpMethod": "POST",
     "IsController": true,
     "Order": 0,
     "Parameters": [
       {
         "Name": "model",
-        "Type": "BackEnd.Models.Domains.Reservation",
+        "Type": "BackEnd.Models.DTOS.LoginVM",
         "IsRequired": true
       }
     ],
     "ReturnTypes": []
   },
   {
-    "ContainingType": "BackEnd.Controllers.ReservationController",
-    "Method": "UpdateReservationAsync",
-    "RelativePath": "api/Reservation",
+    "ContainingType": "BackEnd.Controllers.BillController",
+    "Method": "AddBill",
+    "RelativePath": "Bill/AddBill",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "model",
+        "Type": "BackEnd.Models.Domains.Bill",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "BackEnd.Controllers.BillController",
+    "Method": "GetAllBill",
+    "RelativePath": "Bill/GetAllBill",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "BackEnd.Controllers.BillController",
+    "Method": "GetBillByGuestID",
+    "RelativePath": "Bill/GetBillByGuestID/{id}",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "id",
+        "Type": "System.String",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "BackEnd.Controllers.BillController",
+    "Method": "UpdateBill",
+    "RelativePath": "Bill/UpdateBill",
     "HttpMethod": "PUT",
     "IsController": true,
     "Order": 0,
     "Parameters": [
       {
         "Name": "model",
-        "Type": "BackEnd.Models.Domains.Reservation",
-        "IsRequired": true
-      }
-    ],
-    "ReturnTypes": []
-  },
-  {
-    "ContainingType": "BackEnd.Controllers.ReservationController",
-    "Method": "DeleteReservation",
-    "RelativePath": "api/Reservation/{id}",
-    "HttpMethod": "DELETE",
-    "IsController": true,
-    "Order": 0,
-    "Parameters": [
-      {
-        "Name": "id",
-        "Type": "System.String",
-        "IsRequired": true
-      }
-    ],
-    "ReturnTypes": []
-  },
-  {
-    "ContainingType": "BackEnd.Controllers.ReservationController",
-    "Method": "Cancel",
-    "RelativePath": "api/Reservation/Cancel",
-    "HttpMethod": "GET",
-    "IsController": true,
-    "Order": 0,
-    "Parameters": [
-      {
-        "Name": "IDReservation",
-        "Type": "System.String",
-        "IsRequired": false
-      }
-    ],
-    "ReturnTypes": [
-      {
-        "Type": "BackEnd.Models.Domains.Reservation",
-        "MediaTypes": [
-          "text/plain",
-          "application/json",
-          "text/json"
-        ],
-        "StatusCode": 200
-      }
-    ]
-  },
-  {
-    "ContainingType": "BackEnd.Controllers.ReservationController",
-    "Method": "CheckIn",
-    "RelativePath": "api/Reservation/CheckIn",
-    "HttpMethod": "GET",
-    "IsController": true,
-    "Order": 0,
-    "Parameters": [
-      {
-        "Name": "IDReservation",
-        "Type": "System.String",
-        "IsRequired": false
-      }
-    ],
-    "ReturnTypes": [
-      {
-        "Type": "BackEnd.Models.Domains.Reservation",
-        "MediaTypes": [
-          "text/plain",
-          "application/json",
-          "text/json"
-        ],
-        "StatusCode": 200
-      }
-    ]
-  },
-  {
-    "ContainingType": "BackEnd.Controllers.ReservationController",
-    "Method": "CheckOut",
-    "RelativePath": "api/Reservation/CheckOut",
-    "HttpMethod": "GET",
-    "IsController": true,
-    "Order": 0,
-    "Parameters": [
-      {
-        "Name": "IDReservation",
-        "Type": "System.String",
-        "IsRequired": false
-      }
-    ],
-    "ReturnTypes": [
-      {
-        "Type": "BackEnd.Models.Domains.Reservation",
-        "MediaTypes": [
-          "text/plain",
-          "application/json",
-          "text/json"
-        ],
-        "StatusCode": 200
-      }
-    ]
-  },
-  {
-    "ContainingType": "BackEnd.Controllers.ReservationController",
-    "Method": "GetAllReservations",
-    "RelativePath": "api/Reservation/GetAllReservations",
-    "HttpMethod": "GET",
-    "IsController": true,
-    "Order": 0,
-    "Parameters": [],
-    "ReturnTypes": [
-      {
-        "Type": "System.Collections.Generic.List\u00601[[BackEnd.Models.Domains.Reservation, BackEnd, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]",
-        "MediaTypes": [
-          "text/plain",
-          "application/json",
-          "text/json"
-        ],
-        "StatusCode": 200
-      }
-    ]
-  },
-  {
-    "ContainingType": "BackEnd.Controllers.ReservationController",
-    "Method": "GetReservation",
-    "RelativePath": "api/Reservation/GetReservation/{id}",
-    "HttpMethod": "GET",
-    "IsController": true,
-    "Order": 0,
-    "Parameters": [
-      {
-        "Name": "id",
-        "Type": "System.String",
-        "IsRequired": true
-      }
-    ],
-    "ReturnTypes": [
-      {
-        "Type": "BackEnd.Models.Domains.Reservation",
-        "MediaTypes": [
-          "text/plain",
-          "application/json",
-          "text/json"
-        ],
-        "StatusCode": 200
-      }
-    ]
-  },
-  {
-    "ContainingType": "BackEnd.Controllers.ReservationController",
-    "Method": "GetReservationByRoom",
-    "RelativePath": "api/Reservation/GetReservationByRoom",
-    "HttpMethod": "GET",
-    "IsController": true,
-    "Order": 0,
-    "Parameters": [
-      {
-        "Name": "IDRoom",
-        "Type": "System.String",
-        "IsRequired": false
-      }
-    ],
-    "ReturnTypes": [
-      {
-        "Type": "BackEnd.Models.Domains.Reservation",
-        "MediaTypes": [
-          "text/plain",
-          "application/json",
-          "text/json"
-        ],
-        "StatusCode": 200
-      }
-    ]
-  },
-  {
-    "ContainingType": "BackEnd.Controllers.ReservationController",
-    "Method": "GetReservationsByGuestID",
-    "RelativePath": "api/Reservation/GetReservationsByGuestID",
-    "HttpMethod": "GET",
-    "IsController": true,
-    "Order": 0,
-    "Parameters": [
-      {
-        "Name": "id",
-        "Type": "System.String",
-        "IsRequired": false
-      }
-    ],
-    "ReturnTypes": [
-      {
-        "Type": "BackEnd.Models.Domains.Reservation",
-        "MediaTypes": [
-          "text/plain",
-          "application/json",
-          "text/json"
-        ],
-        "StatusCode": 200
-      }
-    ]
-  },
-  {
-    "ContainingType": "BackEnd.Controllers.ReservationController",
-    "Method": "GetReservationsByWasConfirm",
-    "RelativePath": "api/Reservation/GetReservationsByWasConfirm",
-    "HttpMethod": "GET",
-    "IsController": true,
-    "Order": 0,
-    "Parameters": [
-      {
-        "Name": "confirm",
-        "Type": "System.Boolean",
-        "IsRequired": false
-      }
-    ],
-    "ReturnTypes": [
-      {
-        "Type": "BackEnd.Models.Domains.Reservation",
-        "MediaTypes": [
-          "text/plain",
-          "application/json",
-          "text/json"
-        ],
-        "StatusCode": 200
-      }
-    ]
-  },
-  {
-    "ContainingType": "BackEnd.Controllers.ReservationController",
-    "Method": "NewReserveRoomsAsync",
-    "RelativePath": "api/Reservation/NewReserveRooms",
-    "HttpMethod": "POST",
-    "IsController": true,
-    "Order": 0,
-    "Parameters": [
-      {
-        "Name": "reservationVM",
-        "Type": "BackEnd.Models.Domains.ReservationVM",
+        "Type": "BackEnd.Models.Domains.Bill",
         "IsRequired": true
       }
     ],
@@ -396,6 +204,304 @@
     "ReturnTypes": []
   },
   {
+    "ContainingType": "BackEnd.Controllers.ReservationController",
+    "Method": "AddReservation",
+    "RelativePath": "Reservation/AddReservation",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "model",
+        "Type": "BackEnd.Models.Domains.Reservation",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "BackEnd.Controllers.ReservationController",
+    "Method": "Cancel",
+    "RelativePath": "Reservation/Cancel",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "IDReservation",
+        "Type": "System.String",
+        "IsRequired": false
+      }
+    ],
+    "ReturnTypes": [
+      {
+        "Type": "BackEnd.Models.Domains.Reservation",
+        "MediaTypes": [
+          "text/plain",
+          "application/json",
+          "text/json"
+        ],
+        "StatusCode": 200
+      }
+    ]
+  },
+  {
+    "ContainingType": "BackEnd.Controllers.ReservationController",
+    "Method": "CheckIn",
+    "RelativePath": "Reservation/CheckIn",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "IDReservation",
+        "Type": "System.String",
+        "IsRequired": false
+      }
+    ],
+    "ReturnTypes": [
+      {
+        "Type": "BackEnd.Models.Domains.Reservation",
+        "MediaTypes": [
+          "text/plain",
+          "application/json",
+          "text/json"
+        ],
+        "StatusCode": 200
+      }
+    ]
+  },
+  {
+    "ContainingType": "BackEnd.Controllers.ReservationController",
+    "Method": "CheckOut",
+    "RelativePath": "Reservation/CheckOut",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "IDReservation",
+        "Type": "System.String",
+        "IsRequired": false
+      }
+    ],
+    "ReturnTypes": [
+      {
+        "Type": "BackEnd.Models.Domains.Reservation",
+        "MediaTypes": [
+          "text/plain",
+          "application/json",
+          "text/json"
+        ],
+        "StatusCode": 200
+      }
+    ]
+  },
+  {
+    "ContainingType": "BackEnd.Controllers.ReservationController",
+    "Method": "DeleteReservation",
+    "RelativePath": "Reservation/DeleteReservation/{id}",
+    "HttpMethod": "DELETE",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "id",
+        "Type": "System.String",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "BackEnd.Controllers.ReservationController",
+    "Method": "GetAllReservations",
+    "RelativePath": "Reservation/GetAllReservations",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "BackEnd.Controllers.ReservationController",
+    "Method": "GetReservation",
+    "RelativePath": "Reservation/GetReservation/{id}",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "id",
+        "Type": "System.String",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "BackEnd.Controllers.ReservationController",
+    "Method": "GetReservationByRoom",
+    "RelativePath": "Reservation/GetReservationByRoom",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "IDRoom",
+        "Type": "System.String",
+        "IsRequired": false
+      }
+    ],
+    "ReturnTypes": [
+      {
+        "Type": "BackEnd.Models.Domains.Reservation",
+        "MediaTypes": [
+          "text/plain",
+          "application/json",
+          "text/json"
+        ],
+        "StatusCode": 200
+      }
+    ]
+  },
+  {
+    "ContainingType": "BackEnd.Controllers.ReservationController",
+    "Method": "GetReservationsByGuestID",
+    "RelativePath": "Reservation/GetReservationsByGuestID",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "id",
+        "Type": "System.String",
+        "IsRequired": false
+      }
+    ],
+    "ReturnTypes": [
+      {
+        "Type": "BackEnd.Models.Domains.Reservation",
+        "MediaTypes": [
+          "text/plain",
+          "application/json",
+          "text/json"
+        ],
+        "StatusCode": 200
+      }
+    ]
+  },
+  {
+    "ContainingType": "BackEnd.Controllers.ReservationController",
+    "Method": "GetReservationsByWasConfirm",
+    "RelativePath": "Reservation/GetReservationsByWasConfirm",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "confirm",
+        "Type": "System.Boolean",
+        "IsRequired": false
+      }
+    ],
+    "ReturnTypes": [
+      {
+        "Type": "BackEnd.Models.Domains.Reservation",
+        "MediaTypes": [
+          "text/plain",
+          "application/json",
+          "text/json"
+        ],
+        "StatusCode": 200
+      }
+    ]
+  },
+  {
+    "ContainingType": "BackEnd.Controllers.ReservationController",
+    "Method": "ReserveRooms",
+    "RelativePath": "Reservation/ReserveRooms",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "reservationVM",
+        "Type": "BackEnd.Models.DTOS.ReservationVM",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "BackEnd.Controllers.ReservationController",
+    "Method": "UpdateReservationAsync",
+    "RelativePath": "Reservation/UpdateReservation",
+    "HttpMethod": "PUT",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "model",
+        "Type": "BackEnd.Models.Domains.Reservation",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "BackEnd.Controllers.ReservationRoomController",
+    "Method": "AddReservationRoom",
+    "RelativePath": "ReservationRoom/AddReservationRoom",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "model",
+        "Type": "BackEnd.Models.Domains.ReservationRoom",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "BackEnd.Controllers.ReservationRoomController",
+    "Method": "DeleteAllReservationRoom",
+    "RelativePath": "ReservationRoom/DeleteAllReservationRoom",
+    "HttpMethod": "DELETE",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "BackEnd.Controllers.ReservationRoomController",
+    "Method": "GetAllReservationRoom",
+    "RelativePath": "ReservationRoom/GetAllReservationRoom",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "BackEnd.Controllers.ReservationRoomController",
+    "Method": "GetReservationRoomByReservationID",
+    "RelativePath": "ReservationRoom/GetReservationRoomByReservationID",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "id",
+        "Type": "System.String",
+        "IsRequired": false
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
     "ContainingType": "BackEnd.Controllers.RoomController",
     "Method": "AddRoom",
     "RelativePath": "Room/AddRoom",
@@ -521,21 +627,11 @@
     "Parameters": [
       {
         "Name": "model",
-        "Type": "BackEnd.Models.Domains.ReservationVM",
+        "Type": "BackEnd.Models.DTOS.ReservationVM",
         "IsRequired": true
       }
     ],
-    "ReturnTypes": [
-      {
-        "Type": "System.Collections.Generic.List\u00601[[BackEnd.Models.Domains.Room, BackEnd, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]",
-        "MediaTypes": [
-          "text/plain",
-          "application/json",
-          "text/json"
-        ],
-        "StatusCode": 200
-      }
-    ]
+    "ReturnTypes": []
   },
   {
     "ContainingType": "BackEnd.Controllers.RoomController",
@@ -622,6 +718,80 @@
       {
         "Name": "model",
         "Type": "BackEnd.Models.Domains.RoomType",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "BackEnd.Controllers.UserController",
+    "Method": "CreateUser",
+    "RelativePath": "User/CreateUser",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "model",
+        "Type": "BackEnd.Models.DTOS.UserVM",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "BackEnd.Controllers.UserController",
+    "Method": "DeleteUser",
+    "RelativePath": "User/DeleteUser/{id}",
+    "HttpMethod": "DELETE",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "id",
+        "Type": "System.String",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "BackEnd.Controllers.UserController",
+    "Method": "GetAllUser",
+    "RelativePath": "User/GetAllUser",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "BackEnd.Controllers.UserController",
+    "Method": "GetUser",
+    "RelativePath": "User/GetUser/{id}",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "id",
+        "Type": "System.String",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "BackEnd.Controllers.UserController",
+    "Method": "UpdateUser",
+    "RelativePath": "User/UpdateUser",
+    "HttpMethod": "PUT",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "model",
+        "Type": "BackEnd.Models.DTOS.UserVM",
         "IsRequired": true
       }
     ],

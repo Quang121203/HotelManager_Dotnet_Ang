@@ -1,5 +1,6 @@
 ﻿using BackEnd.DataAccess;
 using BackEnd.Models.Domains;
+using BackEnd.Models.DTOS;
 using BackEnd.Services.Interfaces;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.SignalR;

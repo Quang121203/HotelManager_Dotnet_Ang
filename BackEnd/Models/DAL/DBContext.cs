@@ -1,10 +1,11 @@
 ﻿using BackEnd.Models.Domains;
+using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore;
-using System.Reflection.Metadata;
+
 
 namespace BackEnd.Models.DAL
 {
-    public class AppDBContext: DbContext
+    public class AppDBContext:  IdentityDbContext<User>
     {
         public AppDBContext(DbContextOptions<AppDBContext> options): base(options)
         {
@@ -12,7 +13,8 @@ namespace BackEnd.Models.DAL
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
-            
+            base.OnModelCreating(modelBuilder);
+
             #region RoomType - Room's (1-n) relationship:
             modelBuilder.Entity<Room>()
             .HasOne(op => op.RoomType)
@@ -54,7 +56,7 @@ namespace BackEnd.Models.DAL
             #endregion
         }
 
-        public DbSet<User> Users { get; set; }
+      
         public DbSet<Guest> Guests { get; set; }
         public DbSet<Reservation> Reservations { get; set; }
         public DbSet<ReservationRoom> ReservationRooms { get; set; }

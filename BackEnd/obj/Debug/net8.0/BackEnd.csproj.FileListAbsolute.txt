@@ -272,3 +272,10 @@ C:\Users\napoleQuang\Downloads\web\BackEnd\BackEnd\obj\Debug\net8.0\refint\BackE
 C:\Users\napoleQuang\Downloads\web\BackEnd\BackEnd\obj\Debug\net8.0\BackEnd.pdb
 C:\Users\napoleQuang\Downloads\web\BackEnd\BackEnd\obj\Debug\net8.0\BackEnd.genruntimeconfig.cache
 C:\Users\napoleQuang\Downloads\web\BackEnd\BackEnd\obj\Debug\net8.0\ref\BackEnd.dll
+C:\Users\napoleQuang\Downloads\web\BackEnd\BackEnd\bin\Debug\net8.0\Microsoft.AspNetCore.Cryptography.Internal.dll
+C:\Users\napoleQuang\Downloads\web\BackEnd\BackEnd\bin\Debug\net8.0\Microsoft.AspNetCore.Cryptography.KeyDerivation.dll
+C:\Users\napoleQuang\Downloads\web\BackEnd\BackEnd\bin\Debug\net8.0\Microsoft.AspNetCore.Identity.EntityFrameworkCore.dll
+C:\Users\napoleQuang\Downloads\web\BackEnd\BackEnd\bin\Debug\net8.0\Microsoft.Extensions.Identity.Core.dll
+C:\Users\napoleQuang\Downloads\web\BackEnd\BackEnd\bin\Debug\net8.0\Microsoft.Extensions.Identity.Stores.dll
+C:\Users\napoleQuang\Downloads\web\BackEnd\BackEnd\bin\Debug\net8.0\Microsoft.Extensions.Options.dll
+C:\Users\napoleQuang\Downloads\web\BackEnd\BackEnd\bin\Debug\net8.0\Microsoft.AspNetCore.Authentication.JwtBearer.dll

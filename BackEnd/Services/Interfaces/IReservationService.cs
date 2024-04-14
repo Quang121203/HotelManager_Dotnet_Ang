@@ -1,4 +1,5 @@
 ﻿using BackEnd.Models.Domains;
+using BackEnd.Models.DTOS;
 
 namespace BackEnd.Services.Interfaces
 {

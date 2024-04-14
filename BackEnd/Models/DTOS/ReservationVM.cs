@@ -1,6 +1,6 @@
 ﻿using System.ComponentModel.DataAnnotations;
 
-namespace BackEnd.Models.Domains
+namespace BackEnd.Models.DTOS
 {
     public class ReservationVM
     {

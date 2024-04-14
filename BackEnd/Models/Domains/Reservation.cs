@@ -17,6 +17,7 @@ namespace BackEnd.Models.Domains
 
         public DateTimeOffset DateCreated { get; set; } = DateTime.Now;
 
+        [JsonIgnore]
         public Guest? Guest { get; set; }
 
         [JsonIgnore]
