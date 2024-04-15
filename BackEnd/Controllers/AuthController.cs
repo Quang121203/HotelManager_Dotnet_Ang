@@ -21,5 +21,15 @@ namespace BackEnd.Controllers
             var response = await this.authService.Login(model);
             return Ok(response);
         }
+
+        [HttpPost("[action]")]
+        public async Task<IActionResult> RefeshToken([FromBody] string refeshToken)
+        {
+            string authorizationHeader = HttpContext.Request.Headers["Authorization"];
+            string accessToken = authorizationHeader.Substring("Bearer ".Length);
+            var token = await this.authService.RefeshToken(accessToken, refeshToken);
+            return Ok(token);
+
+        }
     }
 }

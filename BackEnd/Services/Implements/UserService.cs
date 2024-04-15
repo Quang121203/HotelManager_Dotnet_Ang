@@ -50,13 +50,13 @@ namespace BackEnd.Services.Implements
 
             }
 
-            
+
 
             // Try to create the user
             var result = await this.userManager.CreateAsync(user, defaultPassword);
             await this.userManager.AddToRoleAsync(user, defaultRole);
 
-     
+
 
             return new
             {
@@ -90,7 +90,8 @@ namespace BackEnd.Services.Implements
 
         public async Task<object> GetAllUser()
         {
-            var users = await this.userManager.Users.OrderByDescending(u => u.DateJoined).ToListAsync();
+            var users = await this.userManager.GetUsersInRoleAsync("User");
+
             return new
             {
                 EC = 0,
@@ -103,6 +104,7 @@ namespace BackEnd.Services.Implements
         public async Task<object> GetUser(string id)
         {
             var user = await this.userManager.FindByIdAsync(id);
+            
             return new
             {
                 EC = 0,
@@ -114,6 +116,8 @@ namespace BackEnd.Services.Implements
         public async Task<object> UpdateUser(UserVM model)
         {
             var user = await this.userManager.FindByIdAsync(model.ID);
+            var checkEmail = await this.userManager.FindByEmailAsync(model.Email);
+            var checkName = await this.userManager.FindByNameAsync(model.UserName);
 
             if (user == null)
             {
@@ -125,10 +129,30 @@ namespace BackEnd.Services.Implements
                 };
             }
 
+            if (user.Email != model.Email && checkEmail!=null)
+            {
+                return new
+                {
+                    EC = 1,
+                    EM = "Email already exist",
+                    DT = ""
+                };
+            }
+
+            if (user.UserName != model.UserName && checkName != null)
+            {
+                return new
+                {
+                    EC = 1,
+                    EM = "Name already exist",
+                    DT = ""
+                };
+            }
+
             user.UserName = model.UserName;
             user.Email = model.Email;
 
-           
+
             await this.userManager.UpdateAsync(user);
 
             return new

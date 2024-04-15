@@ -12,8 +12,8 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace BackEnd.Migrations
 {
     [DbContext(typeof(AppDBContext))]
-    [Migration("20240413143243_Identity")]
-    partial class Identity
+    [Migration("20240415134731_seedData2")]
+    partial class seedData2
     {
         /// <inheritdoc />
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
@@ -173,6 +173,27 @@ namespace BackEnd.Migrations
                     b.ToTable("RoomTypes");
                 });
 
+            modelBuilder.Entity("BackEnd.Models.Domains.Token", b =>
+                {
+                    b.Property<string>("RefeshToken")
+                        .HasColumnType("nvarchar(450)");
+
+                    b.Property<string>("AccessToken")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<DateTime>("ExpiresRefeshToken")
+                        .HasColumnType("datetime2");
+
+                    b.Property<string>("UserId")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.HasKey("RefeshToken");
+
+                    b.ToTable("Tokens");
+                });
+
             modelBuilder.Entity("BackEnd.Models.Domains.User", b =>
                 {
                     b.Property<string>("Id")
@@ -194,10 +215,6 @@ namespace BackEnd.Migrations
 
                     b.Property<bool>("EmailConfirmed")
                         .HasColumnType("bit");
-
-                    b.Property<string>("FullName")
-                        .IsRequired()
-                        .HasColumnType("nvarchar(max)");
 
                     b.Property<bool>("LockoutEnabled")
                         .HasColumnType("bit");
@@ -243,6 +260,25 @@ namespace BackEnd.Migrations
                         .HasFilter("[NormalizedUserName] IS NOT NULL");
 
                     b.ToTable("AspNetUsers", (string)null);
+
+                    b.HasData(
+                        new
+                        {
+                            Id = "ea6ba637-a9f9-4380-aa9a-51eec8ccc967",
+                            AccessFailedCount = 0,
+                            ConcurrencyStamp = "47ea1fe1-454c-4eb6-b431-12179dca53c3",
+                            DateJoined = new DateTimeOffset(new DateTime(2024, 4, 15, 20, 47, 30, 851, DateTimeKind.Unspecified).AddTicks(5148), new TimeSpan(0, 7, 0, 0, 0)),
+                            Email = "admin@gmail.com",
+                            EmailConfirmed = false,
+                            LockoutEnabled = false,
+                            NormalizedEmail = "ADMIN@GMAIL.COM",
+                            NormalizedUserName = "ADMIN",
+                            PasswordHash = "AQAAAAIAAYagAAAAEBpoR0h9JQ3L+TDONmRlaW3gvDgU+PHt2DobXkwz1jnTxzKjx8O0ypmTsYVdsps/MQ==",
+                            PhoneNumberConfirmed = false,
+                            SecurityStamp = "9289e411-0e46-4309-bfdc-9f1842f5f27a",
+                            TwoFactorEnabled = false,
+                            UserName = "admin"
+                        });
                 });
 
             modelBuilder.Entity("Microsoft.AspNetCore.Identity.IdentityRole", b =>
@@ -270,6 +306,13 @@ namespace BackEnd.Migrations
                         .HasFilter("[NormalizedName] IS NOT NULL");
 
                     b.ToTable("AspNetRoles", (string)null);
+
+                    b.HasData(
+                        new
+                        {
+                            Id = "1200df0d-ecc4-4b83-a8ed-39f3b7eeb966",
+                            Name = "Admin"
+                        });
                 });
 
             modelBuilder.Entity("Microsoft.AspNetCore.Identity.IdentityRoleClaim<string>", b =>
@@ -357,6 +400,13 @@ namespace BackEnd.Migrations
                     b.HasIndex("RoleId");
 
                     b.ToTable("AspNetUserRoles", (string)null);
+
+                    b.HasData(
+                        new
+                        {
+                            UserId = "ea6ba637-a9f9-4380-aa9a-51eec8ccc967",
+                            RoleId = "1200df0d-ecc4-4b83-a8ed-39f3b7eeb966"
+                        });
                 });
 
             modelBuilder.Entity("Microsoft.AspNetCore.Identity.IdentityUserToken<string>", b =>

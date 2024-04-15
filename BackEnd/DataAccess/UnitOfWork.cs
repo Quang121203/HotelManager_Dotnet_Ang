@@ -18,7 +18,7 @@ namespace BackEnd.DataAccess
             RoomRepository = new Repository<Room>(context);
             RoomTypeRepository = new Repository<RoomType>(context);
             BillRepository = new Repository<Bill>(context);
-            
+            TokenRepository = new Repository<Token>(context);
 
         }
 
@@ -30,6 +30,7 @@ namespace BackEnd.DataAccess
         public IRepository<Room> RoomRepository { get; set; }
         public IRepository<RoomType> RoomTypeRepository { get; set; }
         public IRepository<Bill> BillRepository { get; set; }
+        public IRepository<Token> TokenRepository { get; set; }
 
         public async Task SaveChangesAsync()
         {

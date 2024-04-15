@@ -12,8 +12,8 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace BackEnd.Migrations
 {
     [DbContext(typeof(AppDBContext))]
-    [Migration("20240414085753_User")]
-    partial class User
+    [Migration("20240415133436_seedData")]
+    partial class seedData
     {
         /// <inheritdoc />
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
@@ -173,6 +173,27 @@ namespace BackEnd.Migrations
                     b.ToTable("RoomTypes");
                 });
 
+            modelBuilder.Entity("BackEnd.Models.Domains.Token", b =>
+                {
+                    b.Property<string>("RefeshToken")
+                        .HasColumnType("nvarchar(450)");
+
+                    b.Property<string>("AccessToken")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<DateTime>("ExpiresRefeshToken")
+                        .HasColumnType("datetime2");
+
+                    b.Property<string>("UserId")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.HasKey("RefeshToken");
+
+                    b.ToTable("Tokens");
+                });
+
             modelBuilder.Entity("BackEnd.Models.Domains.User", b =>
                 {
                     b.Property<string>("Id")
@@ -239,6 +260,23 @@ namespace BackEnd.Migrations
                         .HasFilter("[NormalizedUserName] IS NOT NULL");
 
                     b.ToTable("AspNetUsers", (string)null);
+
+                    b.HasData(
+                        new
+                        {
+                            Id = "4592f05e-503f-4481-8d4a-7943762dcf2b",
+                            AccessFailedCount = 0,
+                            ConcurrencyStamp = "e1c55d98-2aad-493a-9747-145681a145ca",
+                            DateJoined = new DateTimeOffset(new DateTime(2024, 4, 15, 20, 34, 36, 97, DateTimeKind.Unspecified).AddTicks(1036), new TimeSpan(0, 7, 0, 0, 0)),
+                            Email = "admin@gmail.com",
+                            EmailConfirmed = false,
+                            LockoutEnabled = false,
+                            PasswordHash = "AQAAAAIAAYagAAAAEJ/8t+HviE9wNopAy+k8OuN6g22MUq0sIuVCg23K8q9/aTiyvA2qYwriuUe8MgT3fQ==",
+                            PhoneNumberConfirmed = false,
+                            SecurityStamp = "bdac454c-8627-4405-9e00-3eb20deebb5b",
+                            TwoFactorEnabled = false,
+                            UserName = "admin"
+                        });
                 });
 
             modelBuilder.Entity("Microsoft.AspNetCore.Identity.IdentityRole", b =>
@@ -266,6 +304,13 @@ namespace BackEnd.Migrations
                         .HasFilter("[NormalizedName] IS NOT NULL");
 
                     b.ToTable("AspNetRoles", (string)null);
+
+                    b.HasData(
+                        new
+                        {
+                            Id = "3413c0f4-0670-4731-9b20-154cb942fa32",
+                            Name = "Admin"
+                        });
                 });
 
             modelBuilder.Entity("Microsoft.AspNetCore.Identity.IdentityRoleClaim<string>", b =>
@@ -353,6 +398,13 @@ namespace BackEnd.Migrations
                     b.HasIndex("RoleId");
 
                     b.ToTable("AspNetUserRoles", (string)null);
+
+                    b.HasData(
+                        new
+                        {
+                            UserId = "4592f05e-503f-4481-8d4a-7943762dcf2b",
+                            RoleId = "3413c0f4-0670-4731-9b20-154cb942fa32"
+                        });
                 });
 
             modelBuilder.Entity("Microsoft.AspNetCore.Identity.IdentityUserToken<string>", b =>

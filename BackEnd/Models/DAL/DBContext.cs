@@ -1,6 +1,8 @@
 ﻿using BackEnd.Models.Domains;
+using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore;
+using System.Diagnostics.Metrics;
 
 
 namespace BackEnd.Models.DAL
@@ -14,6 +16,32 @@ namespace BackEnd.Models.DAL
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
             base.OnModelCreating(modelBuilder);
+
+            //a hasher to hash the password before seeding the user to the db
+            string userID = Guid.NewGuid().ToString();
+            string roleID = Guid.NewGuid().ToString();
+            var hasher = new PasswordHasher<User>();
+
+            //Seeding the User to AspNetUsers table
+            modelBuilder.Entity<User>().HasData(
+                new User
+                {
+                    Id = userID, // primary key
+                    UserName = "admin",
+                    Email= "admin@gmail.com",
+                    PasswordHash = hasher.HashPassword(null, "Abc@123"),
+                    NormalizedEmail="ADMIN@GMAIL.COM",
+                    NormalizedUserName="ADMIN"
+                }
+            );
+
+            modelBuilder.Entity<IdentityRole>().HasData(
+                new IdentityRole() { Id = roleID, Name = "Admin"}   
+            );
+
+            modelBuilder.Entity<IdentityUserRole<string>>().HasData(
+                new IdentityUserRole<string>() { RoleId = roleID, UserId = userID }
+            );
 
             #region RoomType - Room's (1-n) relationship:
             modelBuilder.Entity<Room>()
@@ -63,5 +91,6 @@ namespace BackEnd.Models.DAL
         public DbSet<Room> Rooms { get; set; }
         public DbSet<RoomType> RoomTypes { get; set; }
         public DbSet<Bill> Bills { get; set; }
+        public DbSet<Token> Tokens { get; set; }
     }
 }

@@ -16,6 +16,22 @@
     "ReturnTypes": []
   },
   {
+    "ContainingType": "BackEnd.Controllers.AuthController",
+    "Method": "RefeshToken",
+    "RelativePath": "Auth/RefeshToken",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "refeshToken",
+        "Type": "System.String",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
     "ContainingType": "BackEnd.Controllers.BillController",
     "Method": "AddBill",
     "RelativePath": "Bill/AddBill",
