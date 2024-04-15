@@ -1,0 +1,32 @@
+<div class="modal-dialog container p-5">
+    <div class="modal-content">
+        <div class="modal-header">
+            <h1 mat-dialog-title >{{this.data.action=="Update"?"Update User":"Add User"}}</h1>
+            <button type="button" class="btn-close" (click)="onNoClick()"></button>
+        </div>
+        <div class="modal-body my-3">
+            <form [formGroup]="userForm">
+                
+                <div class="mb-3">
+                    <label for="exampleInputName" class="form-label">UserName</label>
+                    <input type="text" class="form-control"  formControlName="userName">
+                </div>
+
+                <div class="mb-3">
+                    <label for="exampleInputEmail1" class="form-label">Email address</label>
+                    <input type="email" class="form-control"  aria-describedby="emailHelp" formControlName="email">
+                </div>
+
+                <div class="mb-3">
+                    <label for="exampleInputPassword1" class="form-label" >Password</label>
+                    <input class="form-control" disabled value="Abc@123">
+                </div>
+
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary mx-4" (click)="onNoClick()">Close</button>
+                    <button type="submit" class="btn btn-primary" id="btn" (click)="onSubmit()">Submit</button>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>

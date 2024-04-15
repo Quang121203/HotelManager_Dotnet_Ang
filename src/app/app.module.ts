@@ -24,6 +24,7 @@ import { CheckinDialogComponent } from './component/dialog/checkin-dialog/checki
 import { MatStepperModule } from "@angular/material/stepper";
 import { BookRoomDialogComponent } from './component/dialog/book-room-dialog/book-room-dialog.component';
 import { FormsModule } from '@angular/forms';
+import { UserDialogComponent } from './component/dialog/user-dialog/user-dialog.component';
 
 
 
@@ -42,6 +43,7 @@ import { FormsModule } from '@angular/forms';
     BillDialogComponent,
     CheckinDialogComponent,
     BookRoomDialogComponent,
+    UserDialogComponent,
  
   ],
   imports: [

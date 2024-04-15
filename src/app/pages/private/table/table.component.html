@@ -3,9 +3,9 @@
     <div class="card shadow">
         <div class="card-header py-3 d-flex d-flex justify-content-between">
             <p class="text-primary m-0 fw-bold">Employee Info</p>
-            <button type="button" class="btn btn-primary">
+            <!-- <button type="button" class="btn btn-primary" (click)="openAddDialog()">
                 Add
-            </button>
+            </button> -->
         </div>
         <div class="card-body">
             <div class="row">
@@ -26,26 +26,26 @@
                         <tr>
                             <th></th>
                             <th>UserName</th>
-                            <th>FullName</th>
                             <th>Email</th>
                             <th>Start date</th>
                             <th class="text-center">Action</th>
                         </tr>
                     </thead>
                     <tbody>
-                        <tr >
+                        <tr *ngFor="let user of users">
                             <td><img class="rounded-circle me-2" width="30" height="30"
                                     src="assets/img/avatars/avatar5.jpeg"></td>
-                            <td>user.userName</td>
-                            <td>user.fullName</td>
-                            <td>user.email</td>
-                            <td>user.dateJoined | date:'dd/MM/yyyy'</td>
+                            <td>{{user.userName}}</td>                          
+                            <td>{{user.email}}</td>
+                            <td>{{user.dateJoined | date:'dd/MM/yyyy'}}</td>
                             <td class="d-flex justify-content-center">
-                                <button type="button" class="btn btn-primary col-4" >
+                                <button type="button" class="btn btn-primary col-4"
+                                    (click)="openUpdateDialog(user)">
                                     Update
                                 </button>
 
-                                <button type="button" class="btn btn-danger col-4 mx-2">
+                                <button type="button" class="btn btn-danger col-4 mx-2"
+                                    (click)="deleteUser(user.id)">
                                     Delete
                                 </button>
                             </td>
@@ -59,13 +59,7 @@
         </div>
     </div>
 
-    <!-- <div class="container d-flex justify-content-center mt-5">
-        <mat-paginator #paginator class="paginator" (page)="handlePageEvent($event)" [length]="length"
-            [pageSize]="pageSize" [disabled]="disabled" [showFirstLastButtons]="showFirstLastButtons"
-            [pageSizeOptions]="showPageSizeOptions ? pageSizeOptions : []" [hidePageSize]="hidePageSize"
-            [pageIndex]="pageIndex" aria-label="Select page">
-        </mat-paginator> 
-    </div> -->
+    
 
 
 </div>

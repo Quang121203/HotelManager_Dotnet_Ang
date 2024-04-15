@@ -68,4 +68,12 @@ class Booking {
     numberOfRooms: number = 0;
 }
 
-export { Response, Room, RoomType, Guest, Reservation, ReservationRoom, Bill, Booking };
+class User{
+    id:string = "";
+    userName:string = "";
+    email:string = "";
+    dateJoined:string = "";
+}
+
+
+export { Response, Room, RoomType, Guest, Reservation, ReservationRoom, Bill, Booking,User };
