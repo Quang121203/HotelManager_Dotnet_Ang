@@ -73,6 +73,7 @@ class User{
     userName:string = "";
     email:string = "";
     dateJoined:string = "";
+    role:string = "";
 }
 
 

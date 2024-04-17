@@ -2,7 +2,7 @@ import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { LoginComponent } from './pages/login/login.component';
 import { PrivateComponent } from './pages/private/private.component';
-
+import { authGuard } from './services/auth.guard';
 
 const routes: Routes = [
   { path: 'login', component: LoginComponent },
@@ -18,6 +18,7 @@ const routes: Routes = [
       { path:'hotelmanage',loadChildren: ()=> import('./pages/private/hotelmanager/hotelmanager.module').then(module=>module.HotelmanagerModule)},
       { path:'report',loadChildren: ()=> import('./pages/private/report/report.module').then(module=>module.ReportModule)},
     ],
+    canActivate: [authGuard],
   }
 
 ];

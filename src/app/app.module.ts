@@ -26,8 +26,19 @@ import { BookRoomDialogComponent } from './component/dialog/book-room-dialog/boo
 import { FormsModule } from '@angular/forms';
 import { UserDialogComponent } from './component/dialog/user-dialog/user-dialog.component';
 
+import { StoreModule } from '@ngrx/store';
+import { counterReducer } from './counter/counter.reducer';
+import { CounterComponent } from './counter/counter.component';
+import { storeReducer } from './store/store.reducer';
 
-
+import { HTTP_INTERCEPTORS } from '@angular/common/http';
+import { AuthInterceptor } from './config/AuthInterceptor.service';
+import { Router } from '@angular/router';
+import { SnackbarService } from './services/snackbar.service';
+import { CookieService } from 'ngx-cookie-service';
+import { AuthService } from './services/auth.service';
+import { Store } from '@ngrx/store';
+import { User } from './models';
 
 @NgModule({
   declarations: [
@@ -44,7 +55,7 @@ import { UserDialogComponent } from './component/dialog/user-dialog/user-dialog.
     CheckinDialogComponent,
     BookRoomDialogComponent,
     UserDialogComponent,
- 
+    CounterComponent,
   ],
   imports: [
     BrowserModule,
@@ -56,9 +67,21 @@ import { UserDialogComponent } from './component/dialog/user-dialog/user-dialog.
     MatSnackBarModule,
     MatIconModule,
     MatStepperModule,
-    FormsModule
+    FormsModule,
+    StoreModule.forRoot({ counter: counterReducer, user: storeReducer })
   ],
-  providers: [],
+  providers: [
+    {
+      provide: HTTP_INTERCEPTORS,
+      useFactory: function (router: Router, snackbarSerivce: SnackbarService, cookieService: CookieService, 
+        authService:AuthService) {
+        return new AuthInterceptor(router, snackbarSerivce, cookieService, authService);
+      },
+      multi: true,
+      deps: [Router, SnackbarService, CookieService,AuthService] 
+    }
+  ],
+  
   bootstrap: [AppComponent]
 })
 export class AppModule { }

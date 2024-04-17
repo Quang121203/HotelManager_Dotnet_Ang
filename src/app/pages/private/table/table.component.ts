@@ -22,17 +22,17 @@ export class TableComponent {
   }
 
 
-  // openAddDialog(): void {
-  //   const dialogRef = this.dialog.open(ModalUserComponent, {
-  //     width: '50vw', // Chỉnh kích thước theo chiều ngang
+  openAddDialog(): void {
+    const dialogRef = this.dialog.open(UserDialogComponent, {
+      width: '50vw', // Chỉnh kích thước theo chiều ngang
 
-  //     data: { action: "Add" }
-  //   });
+      data: { action: "Add" }
+    });
 
-  //   dialogRef.afterClosed().subscribe(result => {
-  //     this.ngOnInit();
-  //   });
-  // }
+    dialogRef.afterClosed().subscribe(result => {
+      this.ngOnInit();
+    });
+  }
 
   openUpdateDialog(user: User): void {
     const dialogRef = this.dialog.open(UserDialogComponent, {
