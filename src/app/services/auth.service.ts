@@ -2,7 +2,7 @@ import { Injectable } from '@angular/core';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 import eviroments from '../../eviroments';
 import { Observable } from 'rxjs';
-import { Response } from '../models';
+import { Response, User } from '../models';
 import { CookieService } from 'ngx-cookie-service';
 
 @Injectable({
@@ -32,5 +32,15 @@ export class AuthService {
   refeshToken(refresh:string): Observable<Response> {
     let api = `${this.url}Auth/RefeshToken`;
     return this.http.post<Response>(api,'"'+refresh+'"');
+  }
+
+  changePassword(data:{oldPassword:string,newPassword:string}): Observable<Response> {
+    let api = `${this.url}Auth/ChangePassword`;
+    return this.http.post<Response>(api,data);
+  }
+
+  changeInfo(data: User): Observable<Response> {
+    let api = `${this.url}Auth/ChangeInfo`;
+    return this.http.post<Response>(api,data);
   }
 }
