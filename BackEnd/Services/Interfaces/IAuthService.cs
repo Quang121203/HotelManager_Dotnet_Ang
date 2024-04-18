@@ -11,5 +11,11 @@ namespace BackEnd.Services.Interfaces
         string CreateRefreshToken();
         Task<Token> CreateToken(User user);
         Task<object> RefeshToken(string accessToken, string refeshToken);
+
+        object GetInfomation();
+
+        Task<object> ChangePassword(ChangePasswordVM model);
+
+        Task<object> ChangeInfo(UserVM user);
     }
 }

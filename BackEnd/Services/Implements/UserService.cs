@@ -20,14 +20,26 @@ namespace BackEnd.Services.Implements
 
         public async Task<object> CreateUser(UserVM model)
         {
-            var check = await this.userManager.FindByEmailAsync(model.Email);
-            if (check != null)
+            var checkEmail = await this.userManager.FindByEmailAsync(model.Email);
+            if (checkEmail != null)
             {
                 return new
                 {
                     EC = 1,
                     EM = "Email already exist",
                     DT = "",
+                };
+            }
+
+            var checkUserName = await this.userManager.FindByNameAsync(model.UserName);
+
+            if (checkUserName != null)
+            {
+                return new
+                {
+                    EC = 1,
+                    EM = "UserName already exist",
+                    DT = ""
                 };
             }
 

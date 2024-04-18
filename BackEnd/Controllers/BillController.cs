@@ -1,12 +1,14 @@
 ﻿using BackEnd.DataAccess;
 using BackEnd.Models.Domains;
 using BackEnd.Services.Interfaces;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 
 namespace BackEnd.Controllers
 {
     [Route("[controller]")]
     [ApiController]
+    [Authorize]
     public class BillController : Controller
     {
        

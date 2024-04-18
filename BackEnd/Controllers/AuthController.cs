@@ -1,5 +1,7 @@
 ﻿using BackEnd.Models.DTOS;
+using BackEnd.Services.Implements;
 using BackEnd.Services.Interfaces;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 
 namespace BackEnd.Controllers
@@ -31,5 +33,29 @@ namespace BackEnd.Controllers
             return Ok(token);
 
         }
+
+        [HttpGet("[action]"), Authorize]
+        public IActionResult GetInfomation()
+        {
+            var response = this.authService.GetInfomation();
+            return Ok(response);
+        }
+
+        [HttpPost("[action]"), Authorize]
+        public async Task<IActionResult> ChangePassword([FromBody] ChangePasswordVM model)
+        {
+            var response = await this.authService.ChangePassword(model);
+            return Ok(response);
+
+        }
+
+        [HttpPost("[action]"), Authorize]
+        public async Task<IActionResult> ChangeInfo([FromBody] UserVM model)
+        {
+            var response = await this.authService.ChangeInfo(model);
+            return Ok(response);
+
+        }
+
     }
 }

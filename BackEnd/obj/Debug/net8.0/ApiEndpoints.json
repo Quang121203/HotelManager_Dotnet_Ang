@@ -1,6 +1,48 @@
 [
   {
     "ContainingType": "BackEnd.Controllers.AuthController",
+    "Method": "ChangeInfo",
+    "RelativePath": "Auth/ChangeInfo",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "model",
+        "Type": "BackEnd.Models.DTOS.UserVM",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "BackEnd.Controllers.AuthController",
+    "Method": "ChangePassword",
+    "RelativePath": "Auth/ChangePassword",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "model",
+        "Type": "BackEnd.Models.DTOS.ChangePasswordVM",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "BackEnd.Controllers.AuthController",
+    "Method": "GetInfomation",
+    "RelativePath": "Auth/GetInfomation",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "BackEnd.Controllers.AuthController",
     "Method": "Login",
     "RelativePath": "Auth/Login",
     "HttpMethod": "POST",

@@ -4,12 +4,14 @@ using BackEnd.Models.Domains;
 using BackEnd.Models.DTOS;
 using BackEnd.Services.Implements;
 using BackEnd.Services.Interfaces;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 
 namespace BackEnd.Controllers
 {
     [ApiController]
     [Route("[controller]")]
+    [Authorize]
     public class RoomController : Controller
     {
         private readonly IRoomService roomService;
@@ -67,6 +69,7 @@ namespace BackEnd.Controllers
             return Ok(rooms);
         }
 
+        [Authorize(Roles = "Admin")]
         [HttpPost("[action]")]
         public async Task<IActionResult> AddRoom([FromBody] Room model)
         {
@@ -74,7 +77,7 @@ namespace BackEnd.Controllers
             return Ok(response);
         }
 
-        
+        [Authorize(Roles = "Admin")]
         [HttpPut("[action]")]
         public async Task<IActionResult> UpdateRoom([FromBody] Room model)
         {          
@@ -82,7 +85,7 @@ namespace BackEnd.Controllers
             return Ok(response);
         }
 
-
+        [Authorize(Roles = "Admin")]
         [HttpDelete("[action]/{id}")]
         public async Task<IActionResult> DeleteRoom([FromRoute] string id)
         {
@@ -90,6 +93,7 @@ namespace BackEnd.Controllers
             return Ok(response);
         }
 
+        [Authorize(Roles = "Admin")]
         [HttpDelete("[action]")]
         public async Task<IActionResult> DeleteAllRoomTypes()
         {

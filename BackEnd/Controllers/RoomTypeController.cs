@@ -1,12 +1,14 @@
 using Azure;
 using BackEnd.Models.Domains;
 using BackEnd.Services.Interfaces;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 
 namespace BackEnd.Controllers
 {
     [ApiController]
     [Route("[controller]")]
+    [Authorize]
     public class RoomTypeController : ControllerBase
     {
 
@@ -33,6 +35,7 @@ namespace BackEnd.Controllers
             return Ok(response);
         }
 
+        [Authorize(Roles = "Admin")]
         [HttpPost("[action]")]
         public async Task<IActionResult> CreateRoomType([FromBody] RoomType model)
         {
@@ -47,6 +50,7 @@ namespace BackEnd.Controllers
             return Ok(response);
         }
 
+        [Authorize(Roles = "Admin")]
         [HttpDelete("[action]/{id}")]
         public async Task<IActionResult> DeleteRoomType([FromRoute] string id)
         {
